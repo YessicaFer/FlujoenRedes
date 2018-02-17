@@ -6,8 +6,9 @@ with open ("puntosdif.dat", "w") as salida:
         x=random()
         y=random()
         c=choice([5,7,9,13])
-        nodos.append((x,y,c))
-        print(x, y, c, file=salida)
+        d=random()
+        nodos.append((x,y,c,d))
+        print(x, y, c, d, file=salida)
 
 with open("puntos1dif.plot", "w") as archivo:
     print("set term png", file=archivo)
@@ -17,5 +18,5 @@ with open("puntos1dif.plot", "w") as archivo:
     print("set pointsize 3", file=archivo)
     print("set size square", file=archivo)
     print("set key off", file=archivo)
-    print("plot 'puntosdif.dat' using 1:2:3 with points pt var", file=archivo)
+    print("plot 'puntosdif.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
     print("quit()", file=archivo)
