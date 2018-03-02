@@ -12,27 +12,30 @@ def updown(blabla):
     return f
 
 class GrafoYessica:
-    def _init_(self):
+    def __init__(self):
         self.n=0
         self.x=dict()
-        self.y=dict
+        self.y=dict()
         self.c=dict()
         self.d=dict()
         
     def nodoscrear(self, tamaño):
         self.n=tamaño
-        for t in range (tamaño):
-            self.x[t]=random()
-            self.y[t]=random()
-            self.c[t]=choice([5,7,9,13])
-            self.d[t]=random()
+        with open ("prueba1.dat", "w") as salida:
+            for t in range (tamaño):
+                self.x[t]=random()
+                self.y[t]=random()
+                self.c[t]=choice([5,7,9,13])
+                self.d[t]=random()
+                print(self.x[t], self.y[t], self.c[t], self.d[t], file=salida)
+            
 
-    def conectar(self):
+    def conectar(self, tamaño):
         for x in range(tamaño):
             self.e=random()*10
-            updown(self.e)
-            for i in [0,self.n-2]:
-                for m in [0,self.n-4]:
+            f=updown(self.e)
+            for i in range (tamaño-2):
+                for m in range (tamaño-4):
                     if euclidiana((self.x[x],self.y[x],self.c[x],self.d[x]),(self.x[i],self.y[i],self.c[i],self.d[i]))< euclidiana((self.x[x], self.y[x], self.c[x], self.d[x]),(self.x[m],self.y[m],self.c[m],self.d[m])):
                         if euclidiana((self.x[x],self.y[x],self.c[x],self.d[x]),(self.x[i],self.y[i],self.c[m],self.d[m]))<0.5:
                             if self.c[x]==self.c[i]:
@@ -42,20 +45,29 @@ class GrafoYessica:
                             if self.c[x]==self.c[m]:
                                 aristas.append((self.x[x], self.y[x], self.x[m], self.y[m],f))
 
-def archivo (self, tamaño):
-    with open("tarea2.plot", "w") as archivo:
-        print("set term png", file=archivo)
-        print("set output 'grafica2.png'", file=archivo)
-        print("set xrange [0:1]", file=archivo)
-        print("set yrange [0:1]", file=archivo)
-        print("set pointsize 3", file=archivo)
-        print("set size square", file=archivo)
-        print("set key off", file=archivo)
-        num = 1
-        for a in aristas:
-            (self.x[x], self.y[x], self.x[i], self.y[i], f) = a
-            print("set arrow {:d} from {:f}, {:f} to {:f}, {:f} nohead lw 1.5 lt {:d}".format(num, self.x[x], self.y[x], self.x[i], self.y[i], f), file=archivo)
-            num += 1
-        print("show arrow", file=archivo)
-        print("plot 'ejemplo40.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
-        print("quit()", file=archivo)
+        with open("tarea2.plot", "w") as archivo:
+            print("set term pdf", file=archivo)
+            print("set output 'grafica2.pdf'", file=archivo)
+            print("set xrange [-.1:1.1]", file=archivo)
+            print("set yrange [-.1:1.1]", file=archivo)
+            print("set pointsize 1", file=archivo)
+            print("set size square", file=archivo)
+            print("set key off", file=archivo)
+            num = 1
+            for a in aristas:
+                (self.x[num], self.y[num], self.x[num+1], self.y[num+1], f) = a
+                print("set arrow {:d} from {:f}, {:f} to {:f}, {:f} head filled size 0.07,3 lt {:d}".format(num, self.x[num], self.y[num], self.x[num+1], self.y[num+1], f), file=archivo)
+                num += 1
+            print("show arrow", file=archivo)
+            print("plot 'prueba1.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
+            print("quit()", file=archivo)
+
+            
+n=20
+aristas=[]
+grafoorientado=1      #para que sea orientado grafoorientado=1/ de lo contrario 2
+grafocapacitado=1     #para que sea capacitado grafocapacitado=1/ de lo contrario 2
+#si grafoorientado=2 y grafocapacitado=2 se forma un grafo simple
+G=GrafoYessica()
+G.nodoscrear(n)
+G.conectar(n)
