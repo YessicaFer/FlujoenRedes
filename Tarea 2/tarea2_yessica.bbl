@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+\bibitem{python}
+Python software foundation [{US}].
+\newblock (2001-2018)
+\newblock https://www.python.org/
+
+\bibitem{gnuplot}
+Gnuplot.
+\newblock http://www.gnuplot.info/
+
+\bibitem{mio}
+Yessica~Reyna Fern\'andez.
+\newblock Tarea 1.
+\newblock 2018.
+\newblock Optimizacion de Flujo en Redes.
+\newblock https://github.com/YessicaFer/FlujoenRedes/blob/Tarea-1/Tarea 1/flujo en redes.pdf
+\end{thebibliography}
