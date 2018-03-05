@@ -1,0 +1,17 @@
+implementar los algoritmos que se vieron en clase
+atraves de ejemplos verficar que funcionen los algoritmos para nuestros grafos ya creados anteriormente
+y verificar si funciona para grafos dirigidos
+y poner alguna advertencia para el usuario si lo permite o no, solo verificar o experimentar
+agregar etiquetas a los nodos
+verificar con esperimentacion grafos de diferentes tamaños y ejecutarlos
+para muchas instancias de un mismo tamaño
+por eje 30 grafos diferentes de tamaño 10
+y tomar las mediciones de tiempo de ejecusion
+Hacer graficas para la distribucion de datos de la experimentacion de ls tamaños de tiempo y tamaño de instancia
+Verificarlos para datos distribuidos normalmente.
+candlessticks (parte baja, parte alta, cuartil, mediana)
+Como en python o gnuplot lo que es un ajuste de curvas (gnuplot, con fit)
+Parrafo o discucion a que se deben las diferencias entre el ajuste de la expermentacion de las instancias, y explicar porque no se parece o la semejanza
+wikipedia, cual es la complejidad de ford-fulkerson
+controlar unicamente numero de nodos, y mantener las aristas proporcional al tamaño de nodos
+Tareas por separados de cada uno de los algoritmos para ver como afectan cada uno de los algoritmos
