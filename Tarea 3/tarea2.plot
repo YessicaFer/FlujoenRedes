@@ -5,406 +5,438 @@ set yrange [-.1:1.1]
 set pointsize 1
 set size square
 set key off
-set arrow 1 from 0.577962, 0.452456 to 0.577962, 0.452456 lt 4 dashtype 4
-set arrow 2 from 0.577962, 0.452456 to 0.964009, 0.023389 lt 4 dashtype 4
-set arrow 3 from 0.577962, 0.452456 to 0.440894, 0.875241 lt 8 dashtype 3
-set arrow 4 from 0.577962, 0.452456 to 0.028143, 0.425082 lt 2 dashtype 2
-set arrow 5 from 0.577962, 0.452456 to 0.987862, 0.130606 lt 5 dashtype 1
-set arrow 6 from 0.577962, 0.452456 to 0.329929, 0.145814 lt 5 dashtype 3
-set arrow 7 from 0.577962, 0.452456 to 0.945034, 0.096246 lt 9 dashtype 3
-set arrow 8 from 0.577962, 0.452456 to 0.702018, 0.313301 lt 9 dashtype 3
-set arrow 9 from 0.577962, 0.452456 to 0.265322, 0.855169 lt 1 dashtype 3
-set arrow 10 from 0.577962, 0.452456 to 0.291046, 0.475193 lt 9 dashtype 3
-set arrow 11 from 0.577962, 0.452456 to 0.931555, 0.428031 lt 4 dashtype 5
-set arrow 12 from 0.577962, 0.452456 to 0.481567, 0.414056 lt 8 dashtype 1
-set arrow 13 from 0.577962, 0.452456 to 0.935171, 0.978866 lt 1 dashtype 2
-set arrow 14 from 0.577962, 0.452456 to 0.369373, 0.995988 lt 5 dashtype 1
-set arrow 15 from 0.577962, 0.452456 to 0.315208, 0.708518 lt 9 dashtype 3
-set arrow 16 from 0.577962, 0.452456 to 0.230774, 0.893478 lt 6 dashtype 4
-set arrow 17 from 0.577962, 0.452456 to 0.519419, 0.802464 lt 6 dashtype 5
-set arrow 18 from 0.577962, 0.452456 to 0.006441, 0.993570 lt 2 dashtype 2
-set arrow 19 from 0.577962, 0.452456 to 0.913733, 0.045432 lt 7 dashtype 1
-set arrow 20 from 0.577962, 0.452456 to 0.583652, 0.236184 lt 1 dashtype 5
-set arrow 21 from 0.964009, 0.023389 to 0.577962, 0.452456 lt 9 dashtype 3
-set arrow 22 from 0.964009, 0.023389 to 0.964009, 0.023389 lt 6 dashtype 1
-set arrow 23 from 0.964009, 0.023389 to 0.440894, 0.875241 lt 3 dashtype 2
-set arrow 24 from 0.964009, 0.023389 to 0.028143, 0.425082 lt 7 dashtype 3
-set arrow 25 from 0.964009, 0.023389 to 0.987862, 0.130606 lt 3 dashtype 2
-set arrow 26 from 0.964009, 0.023389 to 0.329929, 0.145814 lt 0 dashtype 2
-set arrow 27 from 0.964009, 0.023389 to 0.945034, 0.096246 lt 1 dashtype 4
-set arrow 28 from 0.964009, 0.023389 to 0.702018, 0.313301 lt 4 dashtype 5
-set arrow 29 from 0.964009, 0.023389 to 0.265322, 0.855169 lt 10 dashtype 1
-set arrow 30 from 0.964009, 0.023389 to 0.291046, 0.475193 lt 1 dashtype 2
-set arrow 31 from 0.964009, 0.023389 to 0.931555, 0.428031 lt 6 dashtype 1
-set arrow 32 from 0.964009, 0.023389 to 0.481567, 0.414056 lt 0 dashtype 4
-set arrow 33 from 0.964009, 0.023389 to 0.935171, 0.978866 lt 4 dashtype 1
-set arrow 34 from 0.964009, 0.023389 to 0.369373, 0.995988 lt 10 dashtype 2
-set arrow 35 from 0.964009, 0.023389 to 0.315208, 0.708518 lt 4 dashtype 3
-set arrow 36 from 0.964009, 0.023389 to 0.230774, 0.893478 lt 9 dashtype 2
-set arrow 37 from 0.964009, 0.023389 to 0.519419, 0.802464 lt 3 dashtype 2
-set arrow 38 from 0.964009, 0.023389 to 0.006441, 0.993570 lt 7 dashtype 3
-set arrow 39 from 0.964009, 0.023389 to 0.913733, 0.045432 lt 8 dashtype 4
-set arrow 40 from 0.964009, 0.023389 to 0.583652, 0.236184 lt 6 dashtype 2
-set arrow 41 from 0.440894, 0.875241 to 0.577962, 0.452456 lt 4 dashtype 2
-set arrow 42 from 0.440894, 0.875241 to 0.964009, 0.023389 lt 1 dashtype 5
-set arrow 43 from 0.440894, 0.875241 to 0.440894, 0.875241 lt 0 dashtype 3
-set arrow 44 from 0.440894, 0.875241 to 0.028143, 0.425082 lt 10 dashtype 5
-set arrow 45 from 0.440894, 0.875241 to 0.987862, 0.130606 lt 8 dashtype 3
-set arrow 46 from 0.440894, 0.875241 to 0.329929, 0.145814 lt 7 dashtype 2
-set arrow 47 from 0.440894, 0.875241 to 0.945034, 0.096246 lt 0 dashtype 3
-set arrow 48 from 0.440894, 0.875241 to 0.702018, 0.313301 lt 5 dashtype 3
-set arrow 49 from 0.440894, 0.875241 to 0.265322, 0.855169 lt 5 dashtype 5
-set arrow 50 from 0.440894, 0.875241 to 0.291046, 0.475193 lt 9 dashtype 5
-set arrow 51 from 0.440894, 0.875241 to 0.931555, 0.428031 lt 2 dashtype 4
-set arrow 52 from 0.440894, 0.875241 to 0.481567, 0.414056 lt 1 dashtype 3
-set arrow 53 from 0.440894, 0.875241 to 0.935171, 0.978866 lt 0 dashtype 2
-set arrow 54 from 0.440894, 0.875241 to 0.369373, 0.995988 lt 9 dashtype 3
-set arrow 55 from 0.440894, 0.875241 to 0.315208, 0.708518 lt 1 dashtype 5
-set arrow 56 from 0.440894, 0.875241 to 0.230774, 0.893478 lt 4 dashtype 5
-set arrow 57 from 0.440894, 0.875241 to 0.519419, 0.802464 lt 7 dashtype 5
-set arrow 58 from 0.440894, 0.875241 to 0.006441, 0.993570 lt 4 dashtype 5
-set arrow 59 from 0.440894, 0.875241 to 0.913733, 0.045432 lt 4 dashtype 5
-set arrow 60 from 0.440894, 0.875241 to 0.583652, 0.236184 lt 2 dashtype 4
-set arrow 61 from 0.028143, 0.425082 to 0.577962, 0.452456 lt 6 dashtype 4
-set arrow 62 from 0.028143, 0.425082 to 0.964009, 0.023389 lt 2 dashtype 2
-set arrow 63 from 0.028143, 0.425082 to 0.440894, 0.875241 lt 10 dashtype 2
-set arrow 64 from 0.028143, 0.425082 to 0.028143, 0.425082 lt 7 dashtype 5
-set arrow 65 from 0.028143, 0.425082 to 0.987862, 0.130606 lt 7 dashtype 5
-set arrow 66 from 0.028143, 0.425082 to 0.329929, 0.145814 lt 0 dashtype 1
-set arrow 67 from 0.028143, 0.425082 to 0.945034, 0.096246 lt 9 dashtype 2
-set arrow 68 from 0.028143, 0.425082 to 0.702018, 0.313301 lt 8 dashtype 4
-set arrow 69 from 0.028143, 0.425082 to 0.265322, 0.855169 lt 0 dashtype 3
-set arrow 70 from 0.028143, 0.425082 to 0.291046, 0.475193 lt 1 dashtype 4
-set arrow 71 from 0.028143, 0.425082 to 0.931555, 0.428031 lt 8 dashtype 5
-set arrow 72 from 0.028143, 0.425082 to 0.481567, 0.414056 lt 1 dashtype 2
-set arrow 73 from 0.028143, 0.425082 to 0.935171, 0.978866 lt 4 dashtype 3
-set arrow 74 from 0.028143, 0.425082 to 0.369373, 0.995988 lt 4 dashtype 3
-set arrow 75 from 0.028143, 0.425082 to 0.315208, 0.708518 lt 9 dashtype 3
-set arrow 76 from 0.028143, 0.425082 to 0.230774, 0.893478 lt 4 dashtype 3
-set arrow 77 from 0.028143, 0.425082 to 0.519419, 0.802464 lt 3 dashtype 2
-set arrow 78 from 0.028143, 0.425082 to 0.006441, 0.993570 lt 6 dashtype 4
-set arrow 79 from 0.028143, 0.425082 to 0.913733, 0.045432 lt 7 dashtype 1
-set arrow 80 from 0.028143, 0.425082 to 0.583652, 0.236184 lt 6 dashtype 3
-set arrow 81 from 0.987862, 0.130606 to 0.577962, 0.452456 lt 8 dashtype 2
-set arrow 82 from 0.987862, 0.130606 to 0.964009, 0.023389 lt 1 dashtype 1
-set arrow 83 from 0.987862, 0.130606 to 0.440894, 0.875241 lt 5 dashtype 4
-set arrow 84 from 0.987862, 0.130606 to 0.028143, 0.425082 lt 4 dashtype 1
-set arrow 85 from 0.987862, 0.130606 to 0.987862, 0.130606 lt 1 dashtype 3
-set arrow 86 from 0.987862, 0.130606 to 0.329929, 0.145814 lt 10 dashtype 1
-set arrow 87 from 0.987862, 0.130606 to 0.945034, 0.096246 lt 1 dashtype 1
-set arrow 88 from 0.987862, 0.130606 to 0.702018, 0.313301 lt 9 dashtype 4
-set arrow 89 from 0.987862, 0.130606 to 0.265322, 0.855169 lt 3 dashtype 3
-set arrow 90 from 0.987862, 0.130606 to 0.291046, 0.475193 lt 9 dashtype 2
-set arrow 91 from 0.987862, 0.130606 to 0.931555, 0.428031 lt 9 dashtype 4
-set arrow 92 from 0.987862, 0.130606 to 0.481567, 0.414056 lt 1 dashtype 4
-set arrow 93 from 0.987862, 0.130606 to 0.935171, 0.978866 lt 1 dashtype 1
-set arrow 94 from 0.987862, 0.130606 to 0.369373, 0.995988 lt 7 dashtype 5
-set arrow 95 from 0.987862, 0.130606 to 0.315208, 0.708518 lt 2 dashtype 1
-set arrow 96 from 0.987862, 0.130606 to 0.230774, 0.893478 lt 7 dashtype 2
-set arrow 97 from 0.987862, 0.130606 to 0.519419, 0.802464 lt 3 dashtype 2
-set arrow 98 from 0.987862, 0.130606 to 0.006441, 0.993570 lt 8 dashtype 5
-set arrow 99 from 0.987862, 0.130606 to 0.913733, 0.045432 lt 3 dashtype 4
-set arrow 100 from 0.987862, 0.130606 to 0.583652, 0.236184 lt 7 dashtype 4
-set arrow 101 from 0.329929, 0.145814 to 0.577962, 0.452456 lt 1 dashtype 4
-set arrow 102 from 0.329929, 0.145814 to 0.964009, 0.023389 lt 6 dashtype 3
-set arrow 103 from 0.329929, 0.145814 to 0.440894, 0.875241 lt 7 dashtype 4
-set arrow 104 from 0.329929, 0.145814 to 0.028143, 0.425082 lt 1 dashtype 4
-set arrow 105 from 0.329929, 0.145814 to 0.987862, 0.130606 lt 5 dashtype 2
-set arrow 106 from 0.329929, 0.145814 to 0.329929, 0.145814 lt 2 dashtype 4
-set arrow 107 from 0.329929, 0.145814 to 0.945034, 0.096246 lt 7 dashtype 5
-set arrow 108 from 0.329929, 0.145814 to 0.702018, 0.313301 lt 7 dashtype 5
-set arrow 109 from 0.329929, 0.145814 to 0.265322, 0.855169 lt 10 dashtype 3
-set arrow 110 from 0.329929, 0.145814 to 0.291046, 0.475193 lt 10 dashtype 3
-set arrow 111 from 0.329929, 0.145814 to 0.931555, 0.428031 lt 0 dashtype 4
-set arrow 112 from 0.329929, 0.145814 to 0.481567, 0.414056 lt 0 dashtype 5
-set arrow 113 from 0.329929, 0.145814 to 0.935171, 0.978866 lt 9 dashtype 4
-set arrow 114 from 0.329929, 0.145814 to 0.369373, 0.995988 lt 10 dashtype 2
-set arrow 115 from 0.329929, 0.145814 to 0.315208, 0.708518 lt 3 dashtype 1
-set arrow 116 from 0.329929, 0.145814 to 0.230774, 0.893478 lt 0 dashtype 5
-set arrow 117 from 0.329929, 0.145814 to 0.519419, 0.802464 lt 8 dashtype 5
-set arrow 118 from 0.329929, 0.145814 to 0.006441, 0.993570 lt 0 dashtype 4
-set arrow 119 from 0.329929, 0.145814 to 0.913733, 0.045432 lt 0 dashtype 5
-set arrow 120 from 0.329929, 0.145814 to 0.583652, 0.236184 lt 7 dashtype 4
-set arrow 121 from 0.945034, 0.096246 to 0.577962, 0.452456 lt 5 dashtype 1
-set arrow 122 from 0.945034, 0.096246 to 0.964009, 0.023389 lt 0 dashtype 2
-set arrow 123 from 0.945034, 0.096246 to 0.440894, 0.875241 lt 5 dashtype 2
-set arrow 124 from 0.945034, 0.096246 to 0.028143, 0.425082 lt 1 dashtype 5
-set arrow 125 from 0.945034, 0.096246 to 0.987862, 0.130606 lt 5 dashtype 2
-set arrow 126 from 0.945034, 0.096246 to 0.329929, 0.145814 lt 1 dashtype 3
-set arrow 127 from 0.945034, 0.096246 to 0.945034, 0.096246 lt 1 dashtype 5
-set arrow 128 from 0.945034, 0.096246 to 0.702018, 0.313301 lt 4 dashtype 1
-set arrow 129 from 0.945034, 0.096246 to 0.265322, 0.855169 lt 2 dashtype 4
-set arrow 130 from 0.945034, 0.096246 to 0.291046, 0.475193 lt 1 dashtype 1
-set arrow 131 from 0.945034, 0.096246 to 0.931555, 0.428031 lt 2 dashtype 5
-set arrow 132 from 0.945034, 0.096246 to 0.481567, 0.414056 lt 8 dashtype 1
-set arrow 133 from 0.945034, 0.096246 to 0.935171, 0.978866 lt 1 dashtype 4
-set arrow 134 from 0.945034, 0.096246 to 0.369373, 0.995988 lt 8 dashtype 1
-set arrow 135 from 0.945034, 0.096246 to 0.315208, 0.708518 lt 4 dashtype 5
-set arrow 136 from 0.945034, 0.096246 to 0.230774, 0.893478 lt 2 dashtype 3
-set arrow 137 from 0.945034, 0.096246 to 0.519419, 0.802464 lt 8 dashtype 1
-set arrow 138 from 0.945034, 0.096246 to 0.006441, 0.993570 lt 8 dashtype 3
-set arrow 139 from 0.945034, 0.096246 to 0.913733, 0.045432 lt 9 dashtype 1
-set arrow 140 from 0.945034, 0.096246 to 0.583652, 0.236184 lt 9 dashtype 3
-set arrow 141 from 0.702018, 0.313301 to 0.577962, 0.452456 lt 6 dashtype 3
-set arrow 142 from 0.702018, 0.313301 to 0.964009, 0.023389 lt 3 dashtype 1
-set arrow 143 from 0.702018, 0.313301 to 0.440894, 0.875241 lt 10 dashtype 3
-set arrow 144 from 0.702018, 0.313301 to 0.028143, 0.425082 lt 8 dashtype 2
-set arrow 145 from 0.702018, 0.313301 to 0.987862, 0.130606 lt 7 dashtype 3
-set arrow 146 from 0.702018, 0.313301 to 0.329929, 0.145814 lt 0 dashtype 5
-set arrow 147 from 0.702018, 0.313301 to 0.945034, 0.096246 lt 0 dashtype 2
-set arrow 148 from 0.702018, 0.313301 to 0.702018, 0.313301 lt 10 dashtype 1
-set arrow 149 from 0.702018, 0.313301 to 0.265322, 0.855169 lt 7 dashtype 3
-set arrow 150 from 0.702018, 0.313301 to 0.291046, 0.475193 lt 8 dashtype 3
-set arrow 151 from 0.702018, 0.313301 to 0.931555, 0.428031 lt 10 dashtype 5
-set arrow 152 from 0.702018, 0.313301 to 0.481567, 0.414056 lt 1 dashtype 1
-set arrow 153 from 0.702018, 0.313301 to 0.935171, 0.978866 lt 2 dashtype 1
-set arrow 154 from 0.702018, 0.313301 to 0.369373, 0.995988 lt 10 dashtype 2
-set arrow 155 from 0.702018, 0.313301 to 0.315208, 0.708518 lt 1 dashtype 4
-set arrow 156 from 0.702018, 0.313301 to 0.230774, 0.893478 lt 3 dashtype 2
-set arrow 157 from 0.702018, 0.313301 to 0.519419, 0.802464 lt 0 dashtype 1
-set arrow 158 from 0.702018, 0.313301 to 0.006441, 0.993570 lt 8 dashtype 4
-set arrow 159 from 0.702018, 0.313301 to 0.913733, 0.045432 lt 6 dashtype 2
-set arrow 160 from 0.702018, 0.313301 to 0.583652, 0.236184 lt 6 dashtype 5
-set arrow 161 from 0.265322, 0.855169 to 0.577962, 0.452456 lt 4 dashtype 1
-set arrow 162 from 0.265322, 0.855169 to 0.964009, 0.023389 lt 3 dashtype 4
-set arrow 163 from 0.265322, 0.855169 to 0.440894, 0.875241 lt 9 dashtype 3
-set arrow 164 from 0.265322, 0.855169 to 0.028143, 0.425082 lt 9 dashtype 4
-set arrow 165 from 0.265322, 0.855169 to 0.987862, 0.130606 lt 1 dashtype 5
-set arrow 166 from 0.265322, 0.855169 to 0.329929, 0.145814 lt 7 dashtype 1
-set arrow 167 from 0.265322, 0.855169 to 0.945034, 0.096246 lt 6 dashtype 5
-set arrow 168 from 0.265322, 0.855169 to 0.702018, 0.313301 lt 9 dashtype 4
-set arrow 169 from 0.265322, 0.855169 to 0.265322, 0.855169 lt 1 dashtype 3
-set arrow 170 from 0.265322, 0.855169 to 0.291046, 0.475193 lt 4 dashtype 1
-set arrow 171 from 0.265322, 0.855169 to 0.931555, 0.428031 lt 3 dashtype 3
-set arrow 172 from 0.265322, 0.855169 to 0.481567, 0.414056 lt 0 dashtype 2
-set arrow 173 from 0.265322, 0.855169 to 0.935171, 0.978866 lt 0 dashtype 1
-set arrow 174 from 0.265322, 0.855169 to 0.369373, 0.995988 lt 5 dashtype 1
-set arrow 175 from 0.265322, 0.855169 to 0.315208, 0.708518 lt 0 dashtype 5
-set arrow 176 from 0.265322, 0.855169 to 0.230774, 0.893478 lt 2 dashtype 3
-set arrow 177 from 0.265322, 0.855169 to 0.519419, 0.802464 lt 4 dashtype 5
-set arrow 178 from 0.265322, 0.855169 to 0.006441, 0.993570 lt 1 dashtype 3
-set arrow 179 from 0.265322, 0.855169 to 0.913733, 0.045432 lt 5 dashtype 4
-set arrow 180 from 0.265322, 0.855169 to 0.583652, 0.236184 lt 3 dashtype 2
-set arrow 181 from 0.291046, 0.475193 to 0.577962, 0.452456 lt 2 dashtype 4
-set arrow 182 from 0.291046, 0.475193 to 0.964009, 0.023389 lt 5 dashtype 5
-set arrow 183 from 0.291046, 0.475193 to 0.440894, 0.875241 lt 6 dashtype 5
-set arrow 184 from 0.291046, 0.475193 to 0.028143, 0.425082 lt 10 dashtype 1
-set arrow 185 from 0.291046, 0.475193 to 0.987862, 0.130606 lt 2 dashtype 5
-set arrow 186 from 0.291046, 0.475193 to 0.329929, 0.145814 lt 4 dashtype 1
-set arrow 187 from 0.291046, 0.475193 to 0.945034, 0.096246 lt 0 dashtype 4
-set arrow 188 from 0.291046, 0.475193 to 0.702018, 0.313301 lt 0 dashtype 5
-set arrow 189 from 0.291046, 0.475193 to 0.265322, 0.855169 lt 9 dashtype 2
-set arrow 190 from 0.291046, 0.475193 to 0.291046, 0.475193 lt 4 dashtype 1
-set arrow 191 from 0.291046, 0.475193 to 0.931555, 0.428031 lt 0 dashtype 3
-set arrow 192 from 0.291046, 0.475193 to 0.481567, 0.414056 lt 2 dashtype 3
-set arrow 193 from 0.291046, 0.475193 to 0.935171, 0.978866 lt 3 dashtype 1
-set arrow 194 from 0.291046, 0.475193 to 0.369373, 0.995988 lt 4 dashtype 3
-set arrow 195 from 0.291046, 0.475193 to 0.315208, 0.708518 lt 1 dashtype 5
-set arrow 196 from 0.291046, 0.475193 to 0.230774, 0.893478 lt 7 dashtype 2
-set arrow 197 from 0.291046, 0.475193 to 0.519419, 0.802464 lt 3 dashtype 1
-set arrow 198 from 0.291046, 0.475193 to 0.006441, 0.993570 lt 4 dashtype 3
-set arrow 199 from 0.291046, 0.475193 to 0.913733, 0.045432 lt 1 dashtype 5
-set arrow 200 from 0.291046, 0.475193 to 0.583652, 0.236184 lt 5 dashtype 5
-set arrow 201 from 0.931555, 0.428031 to 0.577962, 0.452456 lt 0 dashtype 4
-set arrow 202 from 0.931555, 0.428031 to 0.964009, 0.023389 lt 8 dashtype 1
-set arrow 203 from 0.931555, 0.428031 to 0.440894, 0.875241 lt 5 dashtype 5
-set arrow 204 from 0.931555, 0.428031 to 0.028143, 0.425082 lt 9 dashtype 3
-set arrow 205 from 0.931555, 0.428031 to 0.987862, 0.130606 lt 3 dashtype 2
-set arrow 206 from 0.931555, 0.428031 to 0.329929, 0.145814 lt 4 dashtype 2
-set arrow 207 from 0.931555, 0.428031 to 0.945034, 0.096246 lt 9 dashtype 1
-set arrow 208 from 0.931555, 0.428031 to 0.702018, 0.313301 lt 9 dashtype 4
-set arrow 209 from 0.931555, 0.428031 to 0.265322, 0.855169 lt 3 dashtype 3
-set arrow 210 from 0.931555, 0.428031 to 0.291046, 0.475193 lt 10 dashtype 1
-set arrow 211 from 0.931555, 0.428031 to 0.931555, 0.428031 lt 4 dashtype 2
-set arrow 212 from 0.931555, 0.428031 to 0.481567, 0.414056 lt 5 dashtype 4
-set arrow 213 from 0.931555, 0.428031 to 0.935171, 0.978866 lt 1 dashtype 3
-set arrow 214 from 0.931555, 0.428031 to 0.369373, 0.995988 lt 4 dashtype 4
-set arrow 215 from 0.931555, 0.428031 to 0.315208, 0.708518 lt 4 dashtype 3
-set arrow 216 from 0.931555, 0.428031 to 0.230774, 0.893478 lt 10 dashtype 2
-set arrow 217 from 0.931555, 0.428031 to 0.519419, 0.802464 lt 5 dashtype 4
-set arrow 218 from 0.931555, 0.428031 to 0.006441, 0.993570 lt 2 dashtype 1
-set arrow 219 from 0.931555, 0.428031 to 0.913733, 0.045432 lt 1 dashtype 1
-set arrow 220 from 0.931555, 0.428031 to 0.583652, 0.236184 lt 7 dashtype 1
-set arrow 221 from 0.481567, 0.414056 to 0.577962, 0.452456 lt 8 dashtype 4
-set arrow 222 from 0.481567, 0.414056 to 0.964009, 0.023389 lt 0 dashtype 3
-set arrow 223 from 0.481567, 0.414056 to 0.440894, 0.875241 lt 5 dashtype 2
-set arrow 224 from 0.481567, 0.414056 to 0.028143, 0.425082 lt 0 dashtype 4
-set arrow 225 from 0.481567, 0.414056 to 0.987862, 0.130606 lt 10 dashtype 3
-set arrow 226 from 0.481567, 0.414056 to 0.329929, 0.145814 lt 8 dashtype 4
-set arrow 227 from 0.481567, 0.414056 to 0.945034, 0.096246 lt 3 dashtype 2
-set arrow 228 from 0.481567, 0.414056 to 0.702018, 0.313301 lt 10 dashtype 2
-set arrow 229 from 0.481567, 0.414056 to 0.265322, 0.855169 lt 7 dashtype 2
-set arrow 230 from 0.481567, 0.414056 to 0.291046, 0.475193 lt 4 dashtype 3
-set arrow 231 from 0.481567, 0.414056 to 0.931555, 0.428031 lt 4 dashtype 4
-set arrow 232 from 0.481567, 0.414056 to 0.481567, 0.414056 lt 3 dashtype 3
-set arrow 233 from 0.481567, 0.414056 to 0.935171, 0.978866 lt 8 dashtype 1
-set arrow 234 from 0.481567, 0.414056 to 0.369373, 0.995988 lt 8 dashtype 5
-set arrow 235 from 0.481567, 0.414056 to 0.315208, 0.708518 lt 7 dashtype 3
-set arrow 236 from 0.481567, 0.414056 to 0.230774, 0.893478 lt 7 dashtype 3
-set arrow 237 from 0.481567, 0.414056 to 0.519419, 0.802464 lt 4 dashtype 1
-set arrow 238 from 0.481567, 0.414056 to 0.006441, 0.993570 lt 6 dashtype 2
-set arrow 239 from 0.481567, 0.414056 to 0.913733, 0.045432 lt 1 dashtype 3
-set arrow 240 from 0.481567, 0.414056 to 0.583652, 0.236184 lt 1 dashtype 5
-set arrow 241 from 0.935171, 0.978866 to 0.577962, 0.452456 lt 5 dashtype 2
-set arrow 242 from 0.935171, 0.978866 to 0.964009, 0.023389 lt 10 dashtype 3
-set arrow 243 from 0.935171, 0.978866 to 0.440894, 0.875241 lt 8 dashtype 1
-set arrow 244 from 0.935171, 0.978866 to 0.028143, 0.425082 lt 2 dashtype 3
-set arrow 245 from 0.935171, 0.978866 to 0.987862, 0.130606 lt 5 dashtype 4
-set arrow 246 from 0.935171, 0.978866 to 0.329929, 0.145814 lt 4 dashtype 5
-set arrow 247 from 0.935171, 0.978866 to 0.945034, 0.096246 lt 4 dashtype 5
-set arrow 248 from 0.935171, 0.978866 to 0.702018, 0.313301 lt 1 dashtype 2
-set arrow 249 from 0.935171, 0.978866 to 0.265322, 0.855169 lt 6 dashtype 4
-set arrow 250 from 0.935171, 0.978866 to 0.291046, 0.475193 lt 1 dashtype 3
-set arrow 251 from 0.935171, 0.978866 to 0.931555, 0.428031 lt 2 dashtype 4
-set arrow 252 from 0.935171, 0.978866 to 0.481567, 0.414056 lt 5 dashtype 1
-set arrow 253 from 0.935171, 0.978866 to 0.935171, 0.978866 lt 5 dashtype 4
-set arrow 254 from 0.935171, 0.978866 to 0.369373, 0.995988 lt 7 dashtype 4
-set arrow 255 from 0.935171, 0.978866 to 0.315208, 0.708518 lt 2 dashtype 4
-set arrow 256 from 0.935171, 0.978866 to 0.230774, 0.893478 lt 4 dashtype 1
-set arrow 257 from 0.935171, 0.978866 to 0.519419, 0.802464 lt 8 dashtype 5
-set arrow 258 from 0.935171, 0.978866 to 0.006441, 0.993570 lt 10 dashtype 1
-set arrow 259 from 0.935171, 0.978866 to 0.913733, 0.045432 lt 3 dashtype 5
-set arrow 260 from 0.935171, 0.978866 to 0.583652, 0.236184 lt 0 dashtype 1
-set arrow 261 from 0.369373, 0.995988 to 0.577962, 0.452456 lt 2 dashtype 4
-set arrow 262 from 0.369373, 0.995988 to 0.964009, 0.023389 lt 6 dashtype 5
-set arrow 263 from 0.369373, 0.995988 to 0.440894, 0.875241 lt 5 dashtype 1
-set arrow 264 from 0.369373, 0.995988 to 0.028143, 0.425082 lt 0 dashtype 3
-set arrow 265 from 0.369373, 0.995988 to 0.987862, 0.130606 lt 2 dashtype 2
-set arrow 266 from 0.369373, 0.995988 to 0.329929, 0.145814 lt 8 dashtype 4
-set arrow 267 from 0.369373, 0.995988 to 0.945034, 0.096246 lt 1 dashtype 1
-set arrow 268 from 0.369373, 0.995988 to 0.702018, 0.313301 lt 4 dashtype 4
-set arrow 269 from 0.369373, 0.995988 to 0.265322, 0.855169 lt 7 dashtype 2
-set arrow 270 from 0.369373, 0.995988 to 0.291046, 0.475193 lt 7 dashtype 1
-set arrow 271 from 0.369373, 0.995988 to 0.931555, 0.428031 lt 8 dashtype 1
-set arrow 272 from 0.369373, 0.995988 to 0.481567, 0.414056 lt 1 dashtype 1
-set arrow 273 from 0.369373, 0.995988 to 0.935171, 0.978866 lt 3 dashtype 2
-set arrow 274 from 0.369373, 0.995988 to 0.369373, 0.995988 lt 4 dashtype 1
-set arrow 275 from 0.369373, 0.995988 to 0.315208, 0.708518 lt 0 dashtype 4
-set arrow 276 from 0.369373, 0.995988 to 0.230774, 0.893478 lt 2 dashtype 1
-set arrow 277 from 0.369373, 0.995988 to 0.519419, 0.802464 lt 9 dashtype 3
-set arrow 278 from 0.369373, 0.995988 to 0.006441, 0.993570 lt 6 dashtype 4
-set arrow 279 from 0.369373, 0.995988 to 0.913733, 0.045432 lt 8 dashtype 4
-set arrow 280 from 0.369373, 0.995988 to 0.583652, 0.236184 lt 1 dashtype 4
-set arrow 281 from 0.315208, 0.708518 to 0.577962, 0.452456 lt 4 dashtype 3
-set arrow 282 from 0.315208, 0.708518 to 0.964009, 0.023389 lt 2 dashtype 4
-set arrow 283 from 0.315208, 0.708518 to 0.440894, 0.875241 lt 5 dashtype 4
-set arrow 284 from 0.315208, 0.708518 to 0.028143, 0.425082 lt 9 dashtype 2
-set arrow 285 from 0.315208, 0.708518 to 0.987862, 0.130606 lt 10 dashtype 2
-set arrow 286 from 0.315208, 0.708518 to 0.329929, 0.145814 lt 5 dashtype 4
-set arrow 287 from 0.315208, 0.708518 to 0.945034, 0.096246 lt 8 dashtype 3
-set arrow 288 from 0.315208, 0.708518 to 0.702018, 0.313301 lt 2 dashtype 2
-set arrow 289 from 0.315208, 0.708518 to 0.265322, 0.855169 lt 5 dashtype 1
-set arrow 290 from 0.315208, 0.708518 to 0.291046, 0.475193 lt 3 dashtype 1
-set arrow 291 from 0.315208, 0.708518 to 0.931555, 0.428031 lt 3 dashtype 2
-set arrow 292 from 0.315208, 0.708518 to 0.481567, 0.414056 lt 3 dashtype 5
-set arrow 293 from 0.315208, 0.708518 to 0.935171, 0.978866 lt 4 dashtype 4
-set arrow 294 from 0.315208, 0.708518 to 0.369373, 0.995988 lt 6 dashtype 2
-set arrow 295 from 0.315208, 0.708518 to 0.315208, 0.708518 lt 4 dashtype 5
-set arrow 296 from 0.315208, 0.708518 to 0.230774, 0.893478 lt 2 dashtype 4
-set arrow 297 from 0.315208, 0.708518 to 0.519419, 0.802464 lt 7 dashtype 5
-set arrow 298 from 0.315208, 0.708518 to 0.006441, 0.993570 lt 0 dashtype 5
-set arrow 299 from 0.315208, 0.708518 to 0.913733, 0.045432 lt 3 dashtype 2
-set arrow 300 from 0.315208, 0.708518 to 0.583652, 0.236184 lt 10 dashtype 1
-set arrow 301 from 0.230774, 0.893478 to 0.577962, 0.452456 lt 5 dashtype 1
-set arrow 302 from 0.230774, 0.893478 to 0.964009, 0.023389 lt 6 dashtype 1
-set arrow 303 from 0.230774, 0.893478 to 0.440894, 0.875241 lt 0 dashtype 2
-set arrow 304 from 0.230774, 0.893478 to 0.028143, 0.425082 lt 7 dashtype 2
-set arrow 305 from 0.230774, 0.893478 to 0.987862, 0.130606 lt 9 dashtype 5
-set arrow 306 from 0.230774, 0.893478 to 0.329929, 0.145814 lt 4 dashtype 1
-set arrow 307 from 0.230774, 0.893478 to 0.945034, 0.096246 lt 9 dashtype 2
-set arrow 308 from 0.230774, 0.893478 to 0.702018, 0.313301 lt 1 dashtype 5
-set arrow 309 from 0.230774, 0.893478 to 0.265322, 0.855169 lt 2 dashtype 3
-set arrow 310 from 0.230774, 0.893478 to 0.291046, 0.475193 lt 8 dashtype 3
-set arrow 311 from 0.230774, 0.893478 to 0.931555, 0.428031 lt 2 dashtype 3
-set arrow 312 from 0.230774, 0.893478 to 0.481567, 0.414056 lt 2 dashtype 1
-set arrow 313 from 0.230774, 0.893478 to 0.935171, 0.978866 lt 1 dashtype 3
-set arrow 314 from 0.230774, 0.893478 to 0.369373, 0.995988 lt 4 dashtype 3
-set arrow 315 from 0.230774, 0.893478 to 0.315208, 0.708518 lt 0 dashtype 4
-set arrow 316 from 0.230774, 0.893478 to 0.230774, 0.893478 lt 10 dashtype 5
-set arrow 317 from 0.230774, 0.893478 to 0.519419, 0.802464 lt 1 dashtype 2
-set arrow 318 from 0.230774, 0.893478 to 0.006441, 0.993570 lt 8 dashtype 2
-set arrow 319 from 0.230774, 0.893478 to 0.913733, 0.045432 lt 7 dashtype 2
-set arrow 320 from 0.230774, 0.893478 to 0.583652, 0.236184 lt 6 dashtype 4
-set arrow 321 from 0.519419, 0.802464 to 0.577962, 0.452456 lt 3 dashtype 1
-set arrow 322 from 0.519419, 0.802464 to 0.964009, 0.023389 lt 1 dashtype 5
-set arrow 323 from 0.519419, 0.802464 to 0.440894, 0.875241 lt 8 dashtype 1
-set arrow 324 from 0.519419, 0.802464 to 0.028143, 0.425082 lt 3 dashtype 5
-set arrow 325 from 0.519419, 0.802464 to 0.987862, 0.130606 lt 8 dashtype 1
-set arrow 326 from 0.519419, 0.802464 to 0.329929, 0.145814 lt 5 dashtype 4
-set arrow 327 from 0.519419, 0.802464 to 0.945034, 0.096246 lt 1 dashtype 1
-set arrow 328 from 0.519419, 0.802464 to 0.702018, 0.313301 lt 7 dashtype 5
-set arrow 329 from 0.519419, 0.802464 to 0.265322, 0.855169 lt 10 dashtype 5
-set arrow 330 from 0.519419, 0.802464 to 0.291046, 0.475193 lt 3 dashtype 3
-set arrow 331 from 0.519419, 0.802464 to 0.931555, 0.428031 lt 8 dashtype 2
-set arrow 332 from 0.519419, 0.802464 to 0.481567, 0.414056 lt 5 dashtype 1
-set arrow 333 from 0.519419, 0.802464 to 0.935171, 0.978866 lt 4 dashtype 3
-set arrow 334 from 0.519419, 0.802464 to 0.369373, 0.995988 lt 7 dashtype 2
-set arrow 335 from 0.519419, 0.802464 to 0.315208, 0.708518 lt 6 dashtype 3
-set arrow 336 from 0.519419, 0.802464 to 0.230774, 0.893478 lt 7 dashtype 5
-set arrow 337 from 0.519419, 0.802464 to 0.519419, 0.802464 lt 9 dashtype 2
-set arrow 338 from 0.519419, 0.802464 to 0.006441, 0.993570 lt 2 dashtype 2
-set arrow 339 from 0.519419, 0.802464 to 0.913733, 0.045432 lt 0 dashtype 1
-set arrow 340 from 0.519419, 0.802464 to 0.583652, 0.236184 lt 6 dashtype 4
-set arrow 341 from 0.006441, 0.993570 to 0.577962, 0.452456 lt 9 dashtype 2
-set arrow 342 from 0.006441, 0.993570 to 0.964009, 0.023389 lt 5 dashtype 1
-set arrow 343 from 0.006441, 0.993570 to 0.440894, 0.875241 lt 3 dashtype 4
-set arrow 344 from 0.006441, 0.993570 to 0.028143, 0.425082 lt 9 dashtype 4
-set arrow 345 from 0.006441, 0.993570 to 0.987862, 0.130606 lt 0 dashtype 4
-set arrow 346 from 0.006441, 0.993570 to 0.329929, 0.145814 lt 7 dashtype 3
-set arrow 347 from 0.006441, 0.993570 to 0.945034, 0.096246 lt 0 dashtype 5
-set arrow 348 from 0.006441, 0.993570 to 0.702018, 0.313301 lt 5 dashtype 4
-set arrow 349 from 0.006441, 0.993570 to 0.265322, 0.855169 lt 7 dashtype 5
-set arrow 350 from 0.006441, 0.993570 to 0.291046, 0.475193 lt 10 dashtype 3
-set arrow 351 from 0.006441, 0.993570 to 0.931555, 0.428031 lt 0 dashtype 4
-set arrow 352 from 0.006441, 0.993570 to 0.481567, 0.414056 lt 1 dashtype 5
-set arrow 353 from 0.006441, 0.993570 to 0.935171, 0.978866 lt 4 dashtype 1
-set arrow 354 from 0.006441, 0.993570 to 0.369373, 0.995988 lt 2 dashtype 2
-set arrow 355 from 0.006441, 0.993570 to 0.315208, 0.708518 lt 4 dashtype 2
-set arrow 356 from 0.006441, 0.993570 to 0.230774, 0.893478 lt 7 dashtype 3
-set arrow 357 from 0.006441, 0.993570 to 0.519419, 0.802464 lt 9 dashtype 4
-set arrow 358 from 0.006441, 0.993570 to 0.006441, 0.993570 lt 10 dashtype 1
-set arrow 359 from 0.006441, 0.993570 to 0.913733, 0.045432 lt 2 dashtype 3
-set arrow 360 from 0.006441, 0.993570 to 0.583652, 0.236184 lt 1 dashtype 5
-set arrow 361 from 0.913733, 0.045432 to 0.577962, 0.452456 lt 1 dashtype 1
-set arrow 362 from 0.913733, 0.045432 to 0.964009, 0.023389 lt 9 dashtype 1
-set arrow 363 from 0.913733, 0.045432 to 0.440894, 0.875241 lt 9 dashtype 4
-set arrow 364 from 0.913733, 0.045432 to 0.028143, 0.425082 lt 0 dashtype 5
-set arrow 365 from 0.913733, 0.045432 to 0.987862, 0.130606 lt 4 dashtype 4
-set arrow 366 from 0.913733, 0.045432 to 0.329929, 0.145814 lt 3 dashtype 5
-set arrow 367 from 0.913733, 0.045432 to 0.945034, 0.096246 lt 8 dashtype 4
-set arrow 368 from 0.913733, 0.045432 to 0.702018, 0.313301 lt 6 dashtype 3
-set arrow 369 from 0.913733, 0.045432 to 0.265322, 0.855169 lt 6 dashtype 4
-set arrow 370 from 0.913733, 0.045432 to 0.291046, 0.475193 lt 8 dashtype 1
-set arrow 371 from 0.913733, 0.045432 to 0.931555, 0.428031 lt 3 dashtype 4
-set arrow 372 from 0.913733, 0.045432 to 0.481567, 0.414056 lt 1 dashtype 2
-set arrow 373 from 0.913733, 0.045432 to 0.935171, 0.978866 lt 7 dashtype 2
-set arrow 374 from 0.913733, 0.045432 to 0.369373, 0.995988 lt 6 dashtype 2
-set arrow 375 from 0.913733, 0.045432 to 0.315208, 0.708518 lt 9 dashtype 5
-set arrow 376 from 0.913733, 0.045432 to 0.230774, 0.893478 lt 4 dashtype 3
-set arrow 377 from 0.913733, 0.045432 to 0.519419, 0.802464 lt 5 dashtype 5
-set arrow 378 from 0.913733, 0.045432 to 0.006441, 0.993570 lt 7 dashtype 3
-set arrow 379 from 0.913733, 0.045432 to 0.913733, 0.045432 lt 5 dashtype 3
-set arrow 380 from 0.913733, 0.045432 to 0.583652, 0.236184 lt 5 dashtype 1
-set arrow 381 from 0.583652, 0.236184 to 0.577962, 0.452456 lt 3 dashtype 3
-set arrow 382 from 0.583652, 0.236184 to 0.964009, 0.023389 lt 5 dashtype 4
-set arrow 383 from 0.583652, 0.236184 to 0.440894, 0.875241 lt 9 dashtype 4
-set arrow 384 from 0.583652, 0.236184 to 0.028143, 0.425082 lt 5 dashtype 2
-set arrow 385 from 0.583652, 0.236184 to 0.987862, 0.130606 lt 4 dashtype 4
-set arrow 386 from 0.583652, 0.236184 to 0.329929, 0.145814 lt 8 dashtype 3
-set arrow 387 from 0.583652, 0.236184 to 0.945034, 0.096246 lt 7 dashtype 3
-set arrow 388 from 0.583652, 0.236184 to 0.702018, 0.313301 lt 3 dashtype 1
-set arrow 389 from 0.583652, 0.236184 to 0.265322, 0.855169 lt 3 dashtype 2
-set arrow 390 from 0.583652, 0.236184 to 0.291046, 0.475193 lt 8 dashtype 1
-set arrow 391 from 0.583652, 0.236184 to 0.931555, 0.428031 lt 4 dashtype 4
-set arrow 392 from 0.583652, 0.236184 to 0.481567, 0.414056 lt 2 dashtype 3
-set arrow 393 from 0.583652, 0.236184 to 0.935171, 0.978866 lt 10 dashtype 3
-set arrow 394 from 0.583652, 0.236184 to 0.369373, 0.995988 lt 9 dashtype 3
-set arrow 395 from 0.583652, 0.236184 to 0.315208, 0.708518 lt 5 dashtype 2
-set arrow 396 from 0.583652, 0.236184 to 0.230774, 0.893478 lt 4 dashtype 3
-set arrow 397 from 0.583652, 0.236184 to 0.519419, 0.802464 lt 6 dashtype 5
-set arrow 398 from 0.583652, 0.236184 to 0.006441, 0.993570 lt 1 dashtype 4
-set arrow 399 from 0.583652, 0.236184 to 0.913733, 0.045432 lt 6 dashtype 2
-set arrow 400 from 0.583652, 0.236184 to 0.583652, 0.236184 lt 0 dashtype 5
+set arrow 1 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 2 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 3 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 4 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 5 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 6 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 7 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 8 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 9 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 10 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 11 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 12 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 13 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 14 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 15 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 16 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 17 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 18 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 19 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 20 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 21 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 22 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 23 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 24 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 25 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 26 from 0.623822, 0.005024 to 0.908592, 0.113284 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 27 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 28 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 29 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 30 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 31 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 32 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 33 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 34 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 35 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 36 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 37 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 38 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 39 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 40 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 41 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 42 from 0.872296, 0.897592 to 0.691658, 0.491527 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 43 from 0.872296, 0.897592 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 44 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 45 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 46 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 47 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 48 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 49 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 50 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 51 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 52 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 53 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 54 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 55 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 56 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 57 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 58 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 59 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 60 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 61 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 62 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 63 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 64 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 65 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 66 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 67 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 68 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 69 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 70 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 71 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 72 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 73 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 74 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 75 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 76 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 77 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 78 from 0.201450, 0.991295 to 0.623831, 0.837820 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 79 from 0.201450, 0.991295 to 0.381472, 0.981013 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 80 from 0.623831, 0.837820 to 0.201450, 0.991295 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 81 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 82 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 83 from 0.623831, 0.837820 to 0.201450, 0.991295 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 84 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 85 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 86 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 87 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 88 from 0.623831, 0.837820 to 0.201450, 0.991295 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 89 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 90 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 91 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 92 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 93 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 94 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 95 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 96 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 97 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 98 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 99 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 100 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 101 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 102 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 103 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 104 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 105 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 106 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 107 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 108 from 0.623831, 0.837820 to 0.201450, 0.991295 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 109 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 110 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 111 from 0.623831, 0.837820 to 0.201450, 0.991295 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 112 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 113 from 0.623831, 0.837820 to 0.463747, 0.494925 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 114 from 0.623831, 0.837820 to 0.381472, 0.981013 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 115 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 116 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 117 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 118 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 119 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 120 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 3
+set arrow 121 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 122 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 123 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 124 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 125 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 126 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 127 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 128 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 129 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 130 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 131 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 132 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 133 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 134 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 135 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 136 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 137 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 138 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 139 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 140 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 3
+set arrow 141 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 142 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 143 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 144 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 145 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 146 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 147 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 148 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 149 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 3
+set arrow 150 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 151 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 152 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 153 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 1
+set arrow 154 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 155 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 156 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 157 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 5
+set arrow 158 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 159 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 160 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 161 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 3
+set arrow 162 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 163 from 0.113551, 0.356277 to 0.463747, 0.494925 head filled size 0.04,8 lt 5 dashtype 4
+set arrow 164 from 0.113551, 0.356277 to 0.178872, 0.327382 head filled size 0.04,8 lt 5 dashtype 2
+set arrow 165 from 0.533638, 0.713717 to 0.980783, 0.883409 head filled size 0.04,8 lt 0 dashtype 5
+set arrow 166 from 0.533638, 0.713717 to 0.980783, 0.883409 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 167 from 0.533638, 0.713717 to 0.980783, 0.883409 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 168 from 0.533638, 0.713717 to 0.980783, 0.883409 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 169 from 0.533638, 0.713717 to 0.980783, 0.883409 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 170 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 171 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 172 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 173 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 174 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 175 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 176 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 177 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 178 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 179 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 180 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 181 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 182 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 183 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 184 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 185 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 186 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 187 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 188 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 189 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 190 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 191 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 192 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 193 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 194 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 195 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 196 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 197 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 198 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 199 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 200 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 201 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 202 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 203 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 204 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 205 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 206 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 207 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 208 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 209 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 210 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 211 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 212 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 213 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 214 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 215 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 216 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 4
+set arrow 217 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 218 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 219 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 220 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 221 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 5
+set arrow 222 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 1
+set arrow 223 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 224 from 0.381472, 0.981013 to 0.201450, 0.991295 head filled size 0.04,8 lt 3 dashtype 2
+set arrow 225 from 0.381472, 0.981013 to 0.623831, 0.837820 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 226 from 0.381472, 0.981013 to 0.463747, 0.494925 head filled size 0.04,8 lt 3 dashtype 3
+set arrow 227 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 228 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 229 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 230 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 231 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 232 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 233 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 234 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 235 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 236 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 237 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 238 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 239 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 240 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 241 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 242 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 243 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 244 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 245 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 246 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 247 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 248 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 249 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 250 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 251 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 252 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 253 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 254 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 255 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 256 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 257 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 258 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 259 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 260 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 261 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 262 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 263 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 264 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 265 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 266 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 267 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 268 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 269 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 270 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 271 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 272 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 273 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 274 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 5
+set arrow 275 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 276 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 4
+set arrow 277 from 0.463747, 0.494925 to 0.623831, 0.837820 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 278 from 0.463747, 0.494925 to 0.113551, 0.356277 head filled size 0.04,8 lt 2 dashtype 1
+set arrow 279 from 0.463747, 0.494925 to 0.381472, 0.981013 head filled size 0.04,8 lt 2 dashtype 2
+set arrow 280 from 0.463747, 0.494925 to 0.178872, 0.327382 head filled size 0.04,8 lt 2 dashtype 3
+set arrow 281 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 3
+set arrow 282 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 283 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 284 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 285 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 1
+set arrow 286 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 287 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 288 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 2
+set arrow 289 from 0.980783, 0.883409 to 0.533638, 0.713717 head filled size 0.04,8 lt 0 dashtype 4
+set arrow 290 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 291 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 292 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 293 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 294 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 295 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 296 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 297 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 298 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 299 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 300 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 301 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 302 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 303 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 304 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 305 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 306 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 307 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 308 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 309 from 0.622557, 0.576100 to 0.872296, 0.897592 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 310 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 4
+set arrow 311 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 312 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 313 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 314 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 315 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 316 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 317 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 318 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 2
+set arrow 319 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 320 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 321 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 3
+set arrow 322 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 1
+set arrow 323 from 0.622557, 0.576100 to 0.691658, 0.491527 head filled size 0.04,8 lt 4 dashtype 5
+set arrow 324 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 325 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 326 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 327 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 328 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 329 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 330 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 331 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 332 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 333 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 334 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 335 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 336 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 337 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 338 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 339 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 340 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 341 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 342 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 343 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 344 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 345 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 346 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 347 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 348 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 349 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 350 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 351 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 352 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 353 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 354 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 355 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 356 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 357 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 358 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 359 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 360 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 361 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 362 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 363 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 364 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 365 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 366 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 367 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 368 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 369 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 370 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 371 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 372 from 0.178872, 0.327382 to 0.113551, 0.356277 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 373 from 0.178872, 0.327382 to 0.463747, 0.494925 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 374 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 375 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 376 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 3
+set arrow 377 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 1
+set arrow 378 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 3
+set arrow 379 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 1
+set arrow 380 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 381 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 3
+set arrow 382 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 383 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 384 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 385 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 386 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 3
+set arrow 387 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 388 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 3
+set arrow 389 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 390 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 391 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 5
+set arrow 392 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 393 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 394 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 5
+set arrow 395 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 396 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 397 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 4
+set arrow 398 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 5
+set arrow 399 from 0.908592, 0.113284 to 0.623822, 0.005024 head filled size 0.04,8 lt 1 dashtype 2
+set arrow 400 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 401 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 402 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 403 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 404 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 405 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 406 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 407 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 408 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 409 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 410 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 411 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 412 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 1
+set arrow 413 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 414 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 415 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 416 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 417 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 418 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 419 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 420 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 421 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 422 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 423 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 424 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 425 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 5
+set arrow 426 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 427 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 428 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 4
+set arrow 429 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
+set arrow 430 from 0.691658, 0.491527 to 0.872296, 0.897592 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 431 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 2
+set arrow 432 from 0.691658, 0.491527 to 0.622557, 0.576100 head filled size 0.04,8 lt 10 dashtype 3
 show arrow
 plot 'prueba1.dat' using 1:2:3:4 with points pt var lc palette var
 quit()
