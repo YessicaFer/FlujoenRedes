@@ -44,7 +44,7 @@ class GrafoYessica:
                                     peso=choice([1,2,3,4,5])
                                     self.conectar(x,i,f,peso)
                         else:
-                            if self.euclidiana(x,w)<0.5:
+                            if self.euclidiana(x,w)<0.4:
                                 if self.V[x][2]==self.V[w][2]:
                                     peso=choice([1,2,3,4,5])
                                     self.conectar(x,w,f,peso)
@@ -72,36 +72,45 @@ class GrafoYessica:
                             d[(desde, hasta)] = c # mejora al camino actual
         return d
 
-    def camino(s, t, c, flujo): # construcción de un camino aumentante
-        cola = [s]
+    def camino(self): # construcción de un camino aumentante
+        cola = [self.s]
         usados = set()
         camino = dict()
         while len(cola) > 0:
             u = cola.pop(0)
             usados.add(u)
-            for (w, v) in c:
+            for (w, v) in self.c:
                 if w == u and v not in cola and v not in usados:
                     actual = flujo.get((u, v), 0)
-                    dif = c[(u, v)] - actual
+                    dif = self.c[(u, v)] - actual
                     if dif > 0:
                         cola.append(v)
                         camino[v] = (u, dif)
-        if t in usados:
+        if self.t in usados:
             return camino
         else: # no se alcanzó
             return None
  
-    def ford_fulkerson(c, s, t): # algoritmo de Ford y Fulkerson
-        if s == t:
+    def ford_fulkerson(self): # algoritmo de Ford y Fulkerson
+        for q in range (len(self.V)):
+            for k in range(len(self.V)):
+                if q is not k and self.V[q][2] == self.V[k][2]:
+                    self.s=self.V[q]
+                    self.t=self.V[k]
+                else:
+                    q+=1
+                    k+=1
+        if self.s == self.t:
             return 0
         maximo = 0
         flujo = dict()
         while True:
-            aum = camino(s, t, c, flujo)
+            self.c=self.floyd_warshall()
+            aum = self.camino()
             if aum is None:
                 break # ya no hay
             incr = min(aum.values(), key = (lambda k: k[1]))[1]
-            u = t
+            u = self.t
             while u in aum:
                 v = aum[u][0]
                 actual = flujo.get((v, u), 0) # cero si no hay
@@ -138,11 +147,11 @@ class GrafoYessica:
             print("plot 'prueba1.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
             print("quit()", file=archivo)
             
-n=15
+n=30
 G=GrafoYessica()
 for v in range (n):
     G.nodoscrear(v, random(), random(), choice([5,7,9,13]), random())
 G.menorentredos()
 G.archivo()
 print(G.floyd_warshall())
-G.ford_fulkerson(1,20)
+print(G.ford_fulkerson())
