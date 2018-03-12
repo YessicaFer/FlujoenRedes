@@ -49,6 +49,69 @@ class GrafoYessica:
                                     peso=choice([1,2,3,4,5])
                                     self.conectar(x,w,f,peso)
 
+    def floyd_warshall(self): 
+        d = {}
+        for z in range(len(self.V)):
+            d[(z, z)] = 0 # distancia reflexiva es cero
+            for u in range (len(self.aristas)): # para vecinos, la distancia es el peso
+                point1=self.aristas[u][0]
+                point2=self.aristas[u][1]
+                d[(point1, point2)] = self.aristas[u][3]
+        for intermedio in range(len(self.V)):
+            for desde in range(len(self.V)):
+                for hasta in range(len(self.V)):
+                    di = None
+                    if (desde, intermedio) in d:
+                        di = d[(desde, intermedio)]
+                    ih = None
+                    if (intermedio, hasta) in d:
+                        ih = d[(intermedio, hasta)]
+                    if di is not None and ih is not None:
+                        c = di + ih # largo del camino via "i"
+                        if (desde, hasta) not in d or c < d[(desde, hasta)]:
+                            d[(desde, hasta)] = c # mejora al camino actual
+        return d
+
+    def camino(s, t, c, flujo): # construcción de un camino aumentante
+        cola = [s]
+        usados = set()
+        camino = dict()
+        while len(cola) > 0:
+            u = cola.pop(0)
+            usados.add(u)
+            for (w, v) in c:
+                if w == u and v not in cola and v not in usados:
+                    actual = flujo.get((u, v), 0)
+                    dif = c[(u, v)] - actual
+                    if dif > 0:
+                        cola.append(v)
+                        camino[v] = (u, dif)
+        if t in usados:
+            return camino
+        else: # no se alcanzó
+            return None
+ 
+    def ford_fulkerson(c, s, t): # algoritmo de Ford y Fulkerson
+        if s == t:
+            return 0
+        maximo = 0
+        flujo = dict()
+        while True:
+            aum = camino(s, t, c, flujo)
+            if aum is None:
+                break # ya no hay
+            incr = min(aum.values(), key = (lambda k: k[1]))[1]
+            u = t
+            while u in aum:
+                v = aum[u][0]
+                actual = flujo.get((v, u), 0) # cero si no hay
+                inverso = flujo.get((u, v), 0)
+                flujo[(v, u)] = actual + incr
+                flujo[(u, v)] = inverso - incr
+                u = v
+            maximo += incr
+        return maximo
+
     def archivo(self):
         with open("tarea2.plot", "w") as archivo:
             print("set term eps", file=archivo)
@@ -74,46 +137,6 @@ class GrafoYessica:
             print("show arrow", file=archivo)
             print("plot 'prueba1.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
             print("quit()", file=archivo)
-
-    def camino(self, s, t, aristas, flujo): # construcción de un camino aumentante
-        cola = [s]
-        usados = set()
-        camino = dict()
-        while len(cola) > 0:
-            u = cola.pop(0)
-            usados.add(u)
-            for (w, v) in aristas:
-                if w == u and v not in cola and v not in usados:
-                    actual = flujo.get((u, v), 0)
-                    dif = aristas[(u, v)] - actual
-                    if dif > 0:
-                        cola.append(v)
-                        camino[v] = (u, dif)
-        if t in usados:
-            return camino
-        else: # no se alcanzó
-            return None
-
-    def ford_fulkerson(self, s, t): # algoritmo de Ford y Fulkerson
-        if s == t:
-            return 0
-        maximo = 0
-        flujo = dict()
-        while True:
-            aum = camino(self, s, t, aristas, flujo)
-            if aum is None:
-                break # ya no hay
-            incr = min(aum.values(), key = (lambda k: k[1]))[1]
-            u = t
-            while u in aum:
-                v = aum[u][0]
-                actual = flujo.get((v, u), 0) # cero si no hay
-                inverso = flujo.get((u, v), 0)
-                flujo[(v, u)] = actual + incr
-                flujo[(u, v)] = inverso - incr
-                u = v
-            maximo += incr
-        return maximo
             
 n=15
 G=GrafoYessica()
@@ -121,4 +144,5 @@ for v in range (n):
     G.nodoscrear(v, random(), random(), choice([5,7,9,13]), random())
 G.menorentredos()
 G.archivo()
+print(G.floyd_warshall())
 G.ford_fulkerson(1,20)
