@@ -85,8 +85,9 @@ class GrafoYessica:
                 p=randrange(0, n)
                 f=randrange(0, 10)
                 peso=choice([1,2,3,4,5])
-                self.aristas.append((q, p, f, peso))
-                if q!=p:
+                #self.aristas.append((q, p, f, peso))
+                if q!=p and (q, p, f, peso) not in self.aristas:
+                    self.aristas.append((q, p, f, peso))
                     x1=self.V[q][0]
                     y1=self.V[q][1]
                     x2=self.V[p][0]
@@ -115,8 +116,9 @@ class GrafoYessica:
                 p=randrange(0, n)
                 f=randrange(0, 10)
                 peso=choice([1,2,3,4,5])
-                self.aristas.append((q, p, f, peso))
-                if q!=p:
+                #self.aristas.append((q, p, f, peso))
+                if q!=p and (q, p, f, peso) not in self.aristas:
+                    self.aristas.append((q, p, f, peso))
                     x1=self.V[q][0]
                     y1=self.V[q][1]
                     x2=self.V[p][0]
@@ -260,7 +262,7 @@ class GrafoYessica:
             print("plot 'p3-cap.dat' using 1:2:3:4 with points pt var lc palette var", file=archivo)
             print("quit()", file=archivo)
             
-cap = False #Si cap=True el grafo sera con ponderacion en las aristas/False para no agregar ponderacion
+cap = True #Si cap=True el grafo sera con ponderacion en las aristas/False para no agregar ponderacion
 orientado = True #Si orientado=True el grafo sera con orientacion en las aristas/False para no agregar orientacion
 
 
