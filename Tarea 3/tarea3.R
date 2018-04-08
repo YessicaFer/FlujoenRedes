@@ -13,8 +13,8 @@ shapiro.test(TDirigido[,1]) #No es normal
 pdf("TDirigidoTT.pdf")
 boxplot(t(TDirigido), main="Tiempo vs N", xlab=c("Número de nodos"), ylab=c("Tiempo (segundos)"), plot=TRUE)
 par(new=TRUE, pty="m", xaxt="n", yaxt="n")
-plot(seq(1:11)^2, type="l" , xlab="", ylab="", col="blue", lwd=2)
-legend("topleft",col=c("Blue"), legend =c("Función Cuadratica"), lwd=3, bty = "n")
+plot(seq(1:11)^3, type="l" , xlab="", ylab="", col="blue", lwd=2)
+legend("topleft",col=c("Blue"), legend =c("Función Cúbica"), lwd=3, bty = "n")
 
 TNoDirigido <- data.frame()
 for (i in 1:11){
@@ -24,8 +24,6 @@ shapiro.test(TNoDirigido[,1]) #No es normal
 pdf("TNoDirigidoTF.pdf")
 boxplot(t(TNoDirigido), main="Tiempo vs N", xlab=c("Número de nodos"), ylab=c("Tiempo (segundos)"), plot=TRUE)
 par(new=TRUE, pty="m", xaxt="n", yaxt="n")
-plot(seq(1:11)^2, type="l" , xlab="", ylab="", col="red", lwd=2)
-legend("topleft",col=c("red"), legend =c("Función Cuadratica"), lwd=3, bty = "n")
+plot(seq(1:11)^3, type="l" , xlab="", ylab="", col="red", lwd=2)
+legend("topleft",col=c("red"), legend =c("Función Cúbica"), lwd=3, bty = "n")
 graphics.off()
-
-shapiro.test(seq(1:5))
