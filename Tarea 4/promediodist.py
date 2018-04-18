@@ -93,7 +93,7 @@ class GrafoYessica:
                 f=randrange(0, 10)
                 peso=choice([1,2,3,4,5])
                 #self.aristas.append((q, p, f, peso))
-                if q!=p and (q, p, f, peso) not in self.aristas:
+                if q is not p and (q, p, f, peso) not in self.aristas:
                     self.aristas.append((q, p, f, peso))
                     self.vecinos[q].add(p)
                     x1=self.V[q][0]
@@ -172,7 +172,7 @@ class GrafoYessica:
         for z in range(len(self.V)):
             self.d[(z, z)] = 0 # distancia reflexiva es cero
             for u in self.vecinos[z]: # para vecinos, la distancia es el peso
-                self.d[(v, u)] = self.aristas[u][3]
+                self.d[(z, u)] = self.aristas[u][3]
         for intermedio in range(len(self.V)):
             for desde in range(len(self.V)):
                 for hasta in range(len(self.V)):
@@ -191,9 +191,24 @@ class GrafoYessica:
         return self.d
 
     def promediodistancias(self):
-        if self.d is not None:
-            diprom=sum(self.d)/n
-        return diprom
+        suma = 0
+        for key, value in self.d.items():
+            suma= suma+value
+        return suma/n
+
+    def promclusters(self):
+        csuma=0
+        for v in range(len(self.V)):
+            m=0
+            for i in self.vecinos[v]:
+                for b in self.vecinos[v]:
+                    if b in self.vecinos[v]:
+                        m += 1
+            csuma += m/(n*(n-1))
+        return csuma/len(self.V)
+
+    def cota_superior(self):
+        
 
     def archivo(self):
         with open("avp1.plot", "w") as archivo:
@@ -230,7 +245,7 @@ class GrafoYessica:
 cap = True #Si cap=True el grafo sera con ponderacion en las aristas/False para no agregar ponderacion
 orientado = True #Si orientado=True el grafo sera con orientacion en las aristas/False para no agregar orientacion
 
-n= 20
+n= 30
 G=GrafoYessica()
 for v in range (n):
     G.nodoscrear(v, random(), random(), choice([5,7,9,13]), random())
@@ -238,4 +253,5 @@ G.menorentredos()
 G.yoconecto(n)
 G.archivo()
 G.floyd_warshall()
-G.promediodistancias()
+print(G.promediodistancias())
+print(G.promclusters())
