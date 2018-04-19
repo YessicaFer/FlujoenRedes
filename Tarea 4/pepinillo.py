@@ -14,8 +14,8 @@ class GrafoYessica:
         
     def nodoscrear(self, v):
         self.pos[v] = (c[0]+(0.3 * cos(angulo * v)), c[1]+(0.3 * sin(angulo * v)))
-        x= self.pos[v][0]
-        y=self.pos[v][1]
+        x= (self.pos[v][0])*10
+        y=(self.pos[v][1])*10
         self.V[v]=(x,y)
         with open ("p3-cap.dat", "a") as salida:
             print(x, y, file=salida)
@@ -29,7 +29,7 @@ class GrafoYessica:
         y2=self.V[n2][1]
         return sqrt( ((x1-x2)**2)+((y1-y2)**2) )
 
-    def conecta(self, k, prob):
+    def conecta(self, k):
         for j in range(k):
             for i in range(len(self.V)):
                 if i< (len(self.V)-(j+1)):
@@ -41,7 +41,7 @@ class GrafoYessica:
                     self.vecinos[i].add((i + (j+1)) - len(self.V))
                     self.vecinos[(i + (j+1)) - len(self.V)].add(i)
 
-    def conectaaleatorio(prob):
+    def conectaaleatorio(self, prob):
         for m in range(len(self.V)):
             for w in range(prob):
                 if m is not w and (m,w) not in self.E:
@@ -94,8 +94,8 @@ class GrafoYessica:
         with open("p3-cap.plot", "w") as archivo:
             print("set term eps", file=archivo)
             print("set output 'p3-cap.eps'", file=archivo)
-            print("set xrange [-.1:1.1]", file=archivo)
-            print("set yrange [-.1:1.1]", file=archivo)
+            print("set xrange [-1:11]", file=archivo)
+            print("set yrange [-1:11]", file=archivo)
             print("set pointsize 1", file=archivo)
             print("set size square", file=archivo)
             print("set key off", file=archivo)
@@ -121,7 +121,8 @@ c=(0.5,0.5)
 angulo=2*pi/n
 for v in range (0,n):
     G.nodoscrear(v)
-G.conecta(k, prob)
+G.conecta(k)
+G.conectaaleatorio(prob)
 G.archivo()
 G.floyd_warshall()
 print(G.promediodistancias())
