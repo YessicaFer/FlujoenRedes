@@ -1,5 +1,5 @@
 from random import random, randint
-from math import sqrt, cos, pi, sin
+from math import sqrt, cos, pi, sin, ceil
 
 class GrafoYessica:
     def __init__(self):
@@ -22,11 +22,6 @@ class GrafoYessica:
         if not v in self.vecinos:
             self.vecinos[v]=set()
 
-    def conecta(self, v, k):
-        self.E[(v, u)] = self.E[(u, v)]=k
-        self.vecinos[v].add(u)
-        self.vecinos[u].add(v)
-
     def euclidiana(self,n1,n2):
         x1=self.V[n1][0]
         y1=self.V[n1][1]
@@ -34,14 +29,33 @@ class GrafoYessica:
         y2=self.V[n2][1]
         return sqrt( ((x1-x2)**2)+((y1-y2)**2) )
 
+    def conecta(self, k, prob):
+        for j in range(k):
+            for i in range(len(self.V)):
+                if i< (len(self.V)-(j+1)):
+                    self.E[(i, i+(j+1))] = self.E[(i+(j+1), i)]=self.euclidiana(i,(i+(j+1)))
+                    self.vecinos[i].add(i+(j+1))
+                    self.vecinos[i+(j+1)].add(i)
+                else:
+                    self.E[(i, (i + (j+1)) - len(self.V))] = self.E[(i + (j+1)) - len(self.V), i]=self.euclidiana(i,(i + (j+1)) - len(self.V))
+                    self.vecinos[i].add((i + (j+1)) - len(self.V))
+                    self.vecinos[(i + (j+1)) - len(self.V)].add(i)
+
+    def conectaaleatorio(prob):
+        for m in range(len(self.V)):
+            for w in range(prob):
+                if m is not w and (m,w) not in self.E:
+                    if randint(1,n)< prob:
+                        self.E[(m,w)]=self.E[(w,m)]=self.euclidiana(m,w)
+                        self.vecinos[m].add(w)
+                        self.vecinos[w].add(m)
+
     def floyd_warshall(self):
         for z in range(len(self.V)):
-            self.d[(z, z)] = self.E[(z,z)]=0 # distancia reflexiva es cero
+            self.d[(z, z)] =0 # distancia reflexiva es cero
             for u in range(len(self.E)): # para vecinos, la distancia es el peso
                 if (z,u) in self.E:
                     self.d[(z, u)] = self.E[(z,u)]
-                else:
-                    self.d[(z, u)] = 0
         for intermedio in range(len(self.V)):
             for desde in range(len(self.V)):
                 for hasta in range(len(self.V)):
@@ -58,6 +72,23 @@ class GrafoYessica:
         with open("Floyd-Warshallpepinillo.dat", "at") as archivo:
             print(self.d, file=archivo)
         return self.d
+
+    def promediodistancias(self):
+        suma = 0
+        for key, value in self.d.items():
+            suma= suma+value
+        return suma/n
+
+    def promclusters(self):
+        csuma=0
+        for v in range(len(self.V)):
+            m=0
+            for i in self.vecinos[v]:
+                for b in self.vecinos[v]:
+                    if b in self.vecinos[v]:
+                        m += 1
+            csuma += m/(n*(n-1))
+        return csuma/len(self.V)
 
     def archivo(self):
         with open("p3-cap.plot", "w") as archivo:
@@ -84,15 +115,14 @@ class GrafoYessica:
 
 n=10
 k=1
+prob=ceil((0.15)*n)
 G=GrafoYessica()
 c=(0.5,0.5)
 angulo=2*pi/n
 for v in range (0,n):
     G.nodoscrear(v)
-for v in range (0,n):
-    for u in range(1, k+1):
-        G.conecta(v,k)
+G.conecta(k, prob)
 G.archivo()
 G.floyd_warshall()
-#print(G.promediodistancias())
-#print(G.promclusters())
+print(G.promediodistancias())
+print(G.promclusters())
