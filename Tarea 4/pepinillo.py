@@ -1,5 +1,5 @@
 from random import random, randint
-from math import sqrt, cos, pi, sin, ceil
+from math import sqrt, cos, pi, sin, ceil, fmod
 
 class GrafoYessica:
     def __init__(self):
@@ -9,11 +9,12 @@ class GrafoYessica:
         self.E=dict()
         self.vecinos=dict()
         self.pos=dict()
+        self.suma = 0
         with open ("p3-cap.dat", "w") as f:
             print("", end="",file=f)
         
     def nodoscrear(self, v):
-        self.pos[v] = (c[0]+(0.3 * cos(angulo * v)), c[1]+(0.3 * sin(angulo * v)))
+        self.pos[v] = (c[0]+(r * cos(angulo * v)), c[1]+(r* sin(angulo * v)))
         x= (self.pos[v][0])*10
         y=(self.pos[v][1])*10
         self.V[v]=(x,y)
@@ -74,10 +75,9 @@ class GrafoYessica:
         return self.d
 
     def promediodistancias(self):
-        suma = 0
         for key, value in self.d.items():
-            suma= suma+value
-        return suma/n
+            self.suma= self.suma+value
+        return self.suma/n
 
     def promclusters(self):
         csuma=0
@@ -90,13 +90,19 @@ class GrafoYessica:
             csuma += m/(n*(n-1))
         return csuma/len(self.V)
 
+    def cota(self):
+        circumferencelength= 2*(pi)*r
+        supremo=(len(self.d)-10)/circumferencelength
+        if supremo> self.suma/n:
+            print("La cota es aceptable")
+
     def archivo(self):
         with open("p3-cap.plot", "w") as archivo:
             print("set term eps", file=archivo)
             print("set output 'p3-cap.eps'", file=archivo)
-            print("set xrange [-1:11]", file=archivo)
-            print("set yrange [-1:11]", file=archivo)
             print("set pointsize 1", file=archivo)
+            print("set xrange[{:f}:{:f}]".format(-1-r, 11+r), file=archivo)
+            print("set yrange[{:f}:{:f}]".format(-1-r, 11+r), file=archivo)
             print("set size square", file=archivo)
             print("set key off", file=archivo)
             num=1
@@ -113,8 +119,9 @@ class GrafoYessica:
             print("plot 'p3-cap.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
-n=10
-k=1
+n=11
+k=3
+r=0.3
 prob=ceil((0.15)*n)
 G=GrafoYessica()
 c=(0.5,0.5)
@@ -127,3 +134,4 @@ G.archivo()
 G.floyd_warshall()
 print(G.promediodistancias())
 print(G.promclusters())
+G.cota()
