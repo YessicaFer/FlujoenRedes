@@ -1,5 +1,5 @@
 from random import random, randint
-from math import sqrt, cos, pi, sin, ceil, fmod
+from math import sqrt, cos, pi, sin, ceil, fmod, floor
 
 class GrafoYessica:
     def __init__(self):
@@ -119,8 +119,11 @@ class GrafoYessica:
             print("plot 'p3-cap.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
-n=11
-k=3
+n=10
+if fmod(n,2)==0:
+    k=floor(n/2)
+else:
+    k=floor((n-1)/2)
 r=0.3
 prob=ceil((0.15)*n)
 G=GrafoYessica()
