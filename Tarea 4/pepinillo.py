@@ -1,5 +1,6 @@
 from random import random, randint
 from math import sqrt, cos, pi, sin, ceil, fmod, floor
+import time
 
 class GrafoYessica:
     def __init__(self):
@@ -10,7 +11,9 @@ class GrafoYessica:
         self.vecinos=dict()
         self.pos=dict()
         self.suma = 0
-        with open ("p3-cap.dat", "w") as f:
+        with open ("prueba1.dat", "w") as f:
+            print("", end="",file=f)
+        with open ("Floyd-Warshallprueba1.dat.dat", "w") as f:
             print("", end="",file=f)
         
     def nodoscrear(self, v):
@@ -18,7 +21,7 @@ class GrafoYessica:
         x= (self.pos[v][0])*10
         y=(self.pos[v][1])*10
         self.V[v]=(x,y)
-        with open ("p3-cap.dat", "a") as salida:
+        with open ("prueba1.dat", "a") as salida:
             print(x, y, file=salida)
         if not v in self.vecinos:
             self.vecinos[v]=set()
@@ -70,7 +73,7 @@ class GrafoYessica:
                         c = di + ih # largo del camino via "i"
                         if (desde, hasta) not in self.d or c < self.d[(desde, hasta)]:
                             self.d[(desde, hasta)] = c # mejora al camino actual
-        with open("Floyd-Warshallpepinillo.dat", "at") as archivo:
+        with open("Floyd-Warshallprueba1.dat", "at") as archivo:
             print(self.d, file=archivo)
         return self.d
 
@@ -92,17 +95,17 @@ class GrafoYessica:
 
     def cota(self):
         circumferencelength= 2*(pi)*r
-        supremo=(len(self.d)-10)/circumferencelength
+        supremo=circumferencelength/(len(self.d)/k)-n
         if supremo> self.suma/n:
-            print("La cota es aceptable")
+            return (self.suma/n)/supremo
 
     def archivo(self):
-        with open("p3-cap.plot", "w") as archivo:
+        with open("prueba1.plot", "w") as archivo:
             print("set term eps", file=archivo)
-            print("set output 'p3-cap.eps'", file=archivo)
+            print("set output 'prueba1.eps'", file=archivo)
             print("set pointsize 1", file=archivo)
-            print("set xrange[{:f}:{:f}]".format(-1-r, 11+r), file=archivo)
-            print("set yrange[{:f}:{:f}]".format(-1-r, 11+r), file=archivo)
+            print("set xrange[{:f}:{:f}]".format(0, 10), file=archivo)
+            print("set yrange[{:f}:{:f}]".format(0, 10), file=archivo)
             print("set size square", file=archivo)
             print("set key off", file=archivo)
             num=1
@@ -116,25 +119,50 @@ class GrafoYessica:
                 print("set arrow {:d} from {:f}, {:f} to {:f}, {:f} nohead".format(num, x1, y1, x2, y2), file=archivo)
                 num += 1
             print("show arrow", file=archivo)
-            print("plot 'p3-cap.dat' using 1:2 with points pt 7", file=archivo)
+            print("plot 'prueba1.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
-n=10
+n=12
+k=4
 if fmod(n,2)==0:
-    k=floor(n/2)
+    if  k>=floor(n/2):
+        print("El valor dado a k no es un valor permitido")
+    else:
+        r=0.3
+        prob=ceil((0.15)*n)
+        G=GrafoYessica()
+        c=(0.5,0.5)
+        angulo=2*pi/n
+        for v in range (0,n):
+            G.nodoscrear(v)
+        G.conecta(k)
+        G.conectaaleatorio(prob)
+        G.archivo()
+        G.floyd_warshall()
+        with open("Resultadoaverageprueba1.dat", "at") as h:
+            print(G.promediodistancias(), h=file)
+        with open("Resultadoclusterprueba1.dat", "at") as o:
+            print(G.promclusters(), o=file)
+        with open("Resultad/s.dat", "at") as q:
+            print(G.cota(), q=file)
 else:
-    k=floor((n-1)/2)
-r=0.3
-prob=ceil((0.15)*n)
-G=GrafoYessica()
-c=(0.5,0.5)
-angulo=2*pi/n
-for v in range (0,n):
-    G.nodoscrear(v)
-G.conecta(k)
-G.conectaaleatorio(prob)
-G.archivo()
-G.floyd_warshall()
-print(G.promediodistancias())
-print(G.promclusters())
-G.cota()
+    if k>=floor((n-1)/2):
+        print("El valor dado a k no es un valor permitido")
+    else:
+        r=0.3
+        prob=ceil((0.15)*n)
+        G=GrafoYessica()
+        c=(0.5,0.5)
+        angulo=2*pi/n
+        for v in range (0,n):
+            G.nodoscrear(v)
+        G.conecta(k)
+        G.conectaaleatorio(prob)
+        G.archivo()
+        G.floyd_warshall()
+        with open("Resultadoaverageprueba1.dat", "at") as h:
+            print(G.promediodistancias(), file=h)
+        with open("Resultadoclusterprueba1.dat", "at") as l:
+            print(G.promclusters(), file=l)
+        with open("Resultad/s.dat", "at") as q:
+            print(G.cota(), file=q)

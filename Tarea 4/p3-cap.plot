@@ -1,8 +1,8 @@
 set term eps
 set output 'p3-cap.eps'
 set pointsize 1
-set xrange[-1.300000:11.300000]
-set yrange[-1.300000:11.300000]
+set xrange[0.000000:10.000000]
+set yrange[0.000000:10.000000]
 set size square
 set key off
 set arrow 1 from 8.000000, 5.000000 to 7.427051, 6.763356 nohead
@@ -65,36 +65,8 @@ set arrow 57 from 5.927051, 2.146830 to 7.427051, 6.763356 nohead
 set arrow 58 from 7.427051, 6.763356 to 5.927051, 2.146830 nohead
 set arrow 59 from 7.427051, 3.236644 to 5.927051, 7.853170 nohead
 set arrow 60 from 5.927051, 7.853170 to 7.427051, 3.236644 nohead
-set arrow 61 from 8.000000, 5.000000 to 2.572949, 6.763356 nohead
-set arrow 62 from 2.572949, 6.763356 to 8.000000, 5.000000 nohead
-set arrow 63 from 7.427051, 6.763356 to 2.000000, 5.000000 nohead
-set arrow 64 from 2.000000, 5.000000 to 7.427051, 6.763356 nohead
-set arrow 65 from 5.927051, 7.853170 to 2.572949, 3.236644 nohead
-set arrow 66 from 2.572949, 3.236644 to 5.927051, 7.853170 nohead
-set arrow 67 from 4.072949, 7.853170 to 4.072949, 2.146830 nohead
-set arrow 68 from 4.072949, 2.146830 to 4.072949, 7.853170 nohead
-set arrow 69 from 2.572949, 6.763356 to 5.927051, 2.146830 nohead
-set arrow 70 from 5.927051, 2.146830 to 2.572949, 6.763356 nohead
-set arrow 71 from 2.000000, 5.000000 to 7.427051, 3.236644 nohead
-set arrow 72 from 7.427051, 3.236644 to 2.000000, 5.000000 nohead
-set arrow 73 from 2.572949, 3.236644 to 8.000000, 5.000000 nohead
-set arrow 74 from 8.000000, 5.000000 to 2.572949, 3.236644 nohead
-set arrow 75 from 4.072949, 2.146830 to 7.427051, 6.763356 nohead
-set arrow 76 from 7.427051, 6.763356 to 4.072949, 2.146830 nohead
-set arrow 77 from 5.927051, 2.146830 to 5.927051, 7.853170 nohead
-set arrow 78 from 5.927051, 7.853170 to 5.927051, 2.146830 nohead
-set arrow 79 from 7.427051, 3.236644 to 4.072949, 7.853170 nohead
-set arrow 80 from 4.072949, 7.853170 to 7.427051, 3.236644 nohead
-set arrow 81 from 8.000000, 5.000000 to 2.000000, 5.000000 nohead
-set arrow 82 from 2.000000, 5.000000 to 8.000000, 5.000000 nohead
-set arrow 83 from 7.427051, 6.763356 to 2.572949, 3.236644 nohead
-set arrow 84 from 2.572949, 3.236644 to 7.427051, 6.763356 nohead
-set arrow 85 from 5.927051, 7.853170 to 4.072949, 2.146830 nohead
-set arrow 86 from 4.072949, 2.146830 to 5.927051, 7.853170 nohead
-set arrow 87 from 4.072949, 7.853170 to 5.927051, 2.146830 nohead
-set arrow 88 from 5.927051, 2.146830 to 4.072949, 7.853170 nohead
-set arrow 89 from 2.572949, 6.763356 to 7.427051, 3.236644 nohead
-set arrow 90 from 7.427051, 3.236644 to 2.572949, 6.763356 nohead
+set arrow 61 from 2.572949, 6.763356 to 8.000000, 5.000000 nohead
+set arrow 62 from 8.000000, 5.000000 to 2.572949, 6.763356 nohead
 show arrow
 plot 'p3-cap.dat' using 1:2 with points pt 7
 quit()
