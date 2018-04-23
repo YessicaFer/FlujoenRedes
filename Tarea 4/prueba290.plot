@@ -1,5 +1,5 @@
 set terminal png truecolor
-set output 'imgen90.eps'
+set output 'imagen90.eps'
 set key off
 set title '90 nodos'
 set xlabel 'Probabilidad'

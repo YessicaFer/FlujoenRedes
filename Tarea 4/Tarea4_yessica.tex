@@ -89,8 +89,25 @@ def promclusters(self):
 					m += 1
 					csuma += m/(n*(n-1))
 	return csuma/len(self.V)
-\end{lstlisting}
+\end{lstlisting}\pagebreak
 \section{Resultados}
-El objetivo principal de la practica era verificar el comportamiento del tiempo que se toma el algoritmo implementado en resolverse y comprobar asi que se sigue manteniendo el mismo comportamiento de tiempo computacional empleado por el algoritmo de Floyd-Warshall, asimismo como interpretar los datos obtenidos por las nuevas características del grafo agregadas para uso de esta practica y así demostrar algún tipo de comportamiento que se relacione entre la cantidad de nodos a considerar y las variaciones de conexiones entre pares de nodos.\\
-
+El objetivo principal de la practica era verificar el comportamiento del tiempo que se toma el algoritmo implementado en resolverse y comprobar así que se sigue manteniendo el mismo comportamiento de tiempo computacional empleado por el algoritmo de Floyd-Warshall, asimismo como interpretar los datos obtenidos por las nuevas características del grafo agregadas para uso de esta practica y así demostrar algún tipo de comportamiento que se relacione entre la cantidad de nodos a considerar y las variaciones de conexiones entre pares de nodos.\\
+Entre las siguientes figuras se mostrara la relación de los tiempos tomados para los diferentes cantidades de nodos que se vera en la figura \ref{Figura 1:}, como también se verán los gráficos generados para las distancias promedio en la figura \ref{Figura 2:} y la figura  y las densidades de cluster realizados para cada cantidad de nodos.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{TiempovsN}
+	\caption{Tiempo versus Cantidad de nodos\label{Figura 1:}}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\subfigure[$n=60$.]{\includegraphics[width=0.70\textwidth]{imgen60}}
+	\subfigure[$n=90$.]{\includegraphics[width=0.70\textwidth]{imgen90}}
+	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 2:}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\subfigure[$n=60$.]{\includegraphics[width=0.70\textwidth]{imgen}}
+	\subfigure[$n=90$.]{\includegraphics[width=0.70\textwidth]{imagen150}}
+	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 2:}
+\end{figure}
 \end{document}
