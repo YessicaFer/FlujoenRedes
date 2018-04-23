@@ -10,7 +10,7 @@ class GrafoYessica:
         self.E=dict()
         self.vecinos=dict()
         self.pos=dict()
-        with open ("prueba60.dat", "w") as f:
+        with open ("prueba10.dat", "w") as f:
             print("", end="",file=f)
         #with open ("Floyd-Warshallprueba.dat", "w") as f:
          #   print("", end="",file=f)
@@ -20,7 +20,7 @@ class GrafoYessica:
         x= (self.pos[v][0])*10
         y=(self.pos[v][1])*10
         self.V[v]=(x,y)
-        with open ("prueba60.dat", "a") as salida:
+        with open ("prueba10.dat", "a") as salida:
             print(x, y, file=salida)
         if not v in self.vecinos:
             self.vecinos[v]=set()
@@ -72,7 +72,7 @@ class GrafoYessica:
                         c = di + ih # largo del camino via "i"
                         if (desde, hasta) not in self.d or c < self.d[(desde, hasta)]:
                             self.d[(desde, hasta)] = c # mejora al camino actual
-        with open("Floyd-Warshallprueba60.dat", "at") as a:
+        with open("Floyd-Warshallprueba10.dat", "at") as a:
             print(self.d, file=a)
         return self.d
 
@@ -103,9 +103,9 @@ class GrafoYessica:
         return csuma/len(self.V)
 
     def archivo(self):
-        with open("prueba60.plot", "w") as archivo:
+        with open("prueba10k2.plot", "w") as archivo:
             print("set term eps", file=archivo)
-            print("set output 'prueba60.eps'", file=archivo)
+            print("set output 'prueba10k2.eps'", file=archivo)
             print("set pointsize 1", file=archivo)
             print("set xrange[{:f}:{:f}]".format(0, 10), file=archivo)
             print("set yrange[{:f}:{:f}]".format(0, 10), file=archivo)
@@ -122,59 +122,59 @@ class GrafoYessica:
                 print("set arrow {:d} from {:f}, {:f} to {:f}, {:f} nohead".format(num, x1, y1, x2, y2), file=archivo)
                 num += 1
             print("show arrow", file=archivo)
-            print("plot 'prueba60.dat' using 1:2 with points pt 7", file=archivo)
+            print("plot 'prueba10.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
-n=60
-for n in range(1,10):
-    for b in range (0,floor(n/2)):
-        with open("Tiempo60.csv","at") as hile:
+n=10
+with open("Tiempo10.csv","at") as hile:
+    start_time = time.clock()
+    k=2
+    if fmod(n,2)==0:
+        if  k>floor(n/2):
+            print("El valor dado a k no es un valor permitido")
+        else:
+            r=0.3
+            prob=2**-(n+1)
+            G=GrafoYessica()
+            c=(0.5,0.5)
+            angulo=2*pi/n
+            for v in range (0,n):
+                G.nodoscrear(v)
+            G.conecta(k)
+            G.conectaaleatorio(prob)
+            G.archivo()
+            G.floyd_warshall()
+            with open("Resultadoaverage10.csv", "at") as h:
+                print(G.promediodistancias(), file=h)
+            with open("Resultadocluster10.csv", "at") as o:
+                print(G.promclusters(), n, prob, file=o)
+            with open("Resultadods10.csv", "at") as p:
+                print(G.cota(), prob, file=p)
+            print (time.clock() - start_time, file=hile)
+    else:
+        with open("Tiempo10.csv","at") as hile:
             start_time = time.clock()
-            k=b+1
-            if fmod(n,2)==0:
-                if  k>floor(n/2):
-                    print("El valor dado a k no es un valor permitido")
-                else:
-                    r=0.3
-                    prob=2**-(n+1)
-                    G=GrafoYessica()
-                    c=(0.5,0.5)
-                    angulo=2*pi/n
-                    for v in range (0,n):
-                        G.nodoscrear(v)
-                    G.conecta(k)
-                    G.conectaaleatorio(prob)
-                    G.archivo()
-                    G.floyd_warshall()
-                    with open("Resultadoaverage60.csv", "at") as h:
-                        print(G.promediodistancias(), file=h)
-                    with open("Resultadocluster60.csv", "at") as o:
-                        print(G.promclusters(), n, prob, file=o)
-                    with open("Resultadods60.csv", "at") as p:
-                        print(G.cota(), prob, file=p)
-                    print (time.clock() - start_time, file=hile)
+            if k>floor((n-1)/2):
+                print("El valor dado a k no es un valor permitido")
             else:
-                with open("Tiempo60.csv","at") as hile:
-                    start_time = time.clock()
-                    if k>floor((n-1)/2):
-                        print("El valor dado a k no es un valor permitido")
-                    else:
-                        r=0.3
-                        prob=2**-(n+1)
-                        G=GrafoYessica()
-                        c=(0.5,0.5)
-                        angulo=2*pi/n
-                        for v in range (0,n):
-                            G.nodoscrear(v)
-                        G.conecta(k)
-                        G.conectaaleatorio(prob)
-                        G.archivo()
-                        G.floyd_warshall()
-                        with open("Resultadoaverage60.csv", "at") as h:
-                            print(G.promediodistancias(), file=h)
-                        with open("Resultadocluster60.csv", "at") as l:
-                            print(G.promclusters(), n, prob, file=l)
-                        with open("Resultadods60.csv", "at") as p:
-                            print(G.cota(), prob, file=p)
-                        print (time.clock() - start_time, file=hile)
+                r=0.3
+                prob=2**-(n+1)
+                G=GrafoYessica()
+                c=(0.5,0.5)
+                angulo=2*pi/n
+                for v in range (0,n):
+                    G.nodoscrear(v)
+                G.conecta(k)
+                G.conectaaleatorio(prob)
+                G.archivo()
+                G.floyd_warshall()
+                with open("Resultadoaverage10.csv", "at") as h:
+                    print(G.promediodistancias(), file=h)
+                with open("Resultadocluster10.csv", "at") as l:
+                    print(G.promclusters(), n, prob, file=l)
+                with open("Resultadods10.csv", "at") as p:
+                    print(G.cota(), prob, file=p)
+                print (time.clock() - start_time, file=hile)
+
+
 

@@ -52,7 +52,13 @@ def conectaaleatorio(self, prob)
 			self.vecinos[m].add(w)
 			self.vecinos[w].add(m)
 \end{lstlisting}
-Así pues, esto definiría lo más básico por elaborar par aun grafo base circular, tratando en las siguientes secciones otros aspectos que se pueden agregar al grafo.
+Así pues, esto definiría lo más básico por elaborar par aun grafo base circular, tratando en las siguientes secciones otros aspectos que se pueden agregar al grafo, a continuación se muestran unos ejemplos del grafo ya descrito:\pagebreak
+\begin{figure}[h!]
+	\centering
+	\subfigure[$n=10$ y $k=1$.]{\includegraphics[width=0.65\textwidth]{prueba10}}
+	\subfigure[$n=10$ y $k=2$.]{\includegraphics[width=0.65\textwidth]{prueba10k2}}
+	\caption{Ejemplos de grafos circulares.}\label{Figura 1:}
+\end{figure}
 \section{Promedios de distancias}
 Como se ha tratado en prácticas anteriores, el algoritmo de Floyd-Warshall\cite{libroalgo} crea un vector con todos los pares de distancias entre un par de puntos dados $u$ y $v$.\\
 Por lo cual se puede considerar como característica en el grafo lo que sería el promedio de distancias entre nodos, tomando la suma de distancias de todos los pares de nodos dados obteniendo así este parámetro que varía dependiendo de la cantidad de nodos, esto es, $D= \frac{\sum_{i=1}^n d[i]}{n}$, donde \texttt{d[i]} es el vector de las distancias tomado del algoritmo de Floyd-Warshall.\\ Donde todo lo ya dicho se desglosa en las siguiente líneas de código:
@@ -89,16 +95,16 @@ def promclusters(self):
 					m += 1
 					csuma += m/(n*(n-1))
 	return csuma/len(self.V)
-\end{lstlisting}\pagebreak
+\end{lstlisting}
 \section{Resultados}
 El objetivo principal de la practica era verificar el comportamiento del tiempo que se toma el algoritmo implementado en resolverse y comprobar así que se sigue manteniendo el mismo comportamiento de tiempo computacional empleado por el algoritmo de Floyd-Warshall, asimismo como interpretar los datos obtenidos por las nuevas características del grafo agregadas para uso de esta práctica y así demostrar algún tipo de comportamiento que se relacione entre la cantidad de nodos a considerar y las variaciones de conexiones entre pares de nodos.\\
-Entre las siguientes figuras se mostrara la relación de los tiempos tomados para los diferentes cantidades de nodos que se verá en la figura \ref{Figura 1:}, hay que destacar que al analizar la gráfica generada por los tiempos esta sigue manteniendo el mismo tiempo computacional referido del algoritmo mismo de $\mathcal{O}$$(n^3)$.
-\\Acto seguido se apreciaran los gráficos generados para las distancias promedio y las densidades de cluster realizados para cada cantidad de nodos graficadas contra la probabilidad con la que se varió las conexiones intermedias de nodos en una escala logarítmica en un intervalo de $(0,\frac{1}{2^1})$ en la figura \ref{Figura 2:} y la figura \ref{Figura 3:}.\\
+Entre las siguientes figuras se mostrara la relación de los tiempos tomados para los diferentes cantidades de nodos que se verá en la figura \ref{Figura 2:}, hay que destacar que al analizar la gráfica generada por los tiempos esta sigue manteniendo el mismo tiempo computacional referido del algoritmo mismo de $\mathcal{O}$$(n^3)$.
+\\Acto seguido se apreciaran los gráficos generados para las distancias promedio y las densidades de cluster realizados para cada cantidad de nodos graficadas contra la probabilidad con la que se varió las conexiones intermedias de nodos en una escala logarítmica en un intervalo de $(0,\frac{1}{2^1})$ en la figura \ref{Figura 3:} y la figura \ref{Figura 4:}.\\
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{TiempovsN}
-	\caption{Tiempo versus Cantidad de nodos\label{Figura 1:}}
-\end{figure}\pagebreak
+	\caption{Tiempo versus Cantidad de nodos\label{Figura 2:}}
+\end{figure}
 \\Para la gráfica anterior se hace uso del lenguaje de programación \texttt{R}\cite{R} con apoyo de los archivos tipo \texttt{csv} con los datos de los tiempos para cada cantidad diferente de nodos, verificando la normalidad de los datos y ajustando la curva de esfuerzo computacional del algoritmo a los datos analizados en un diagrama de cajas, todo esto se resume con las siguientes líneas de código:
 \begin{lstlisting}[style=rm]
 Tiempos <- as.data.frame(t(read.csv("Tiempo60.csv", header=FALSE)))
@@ -119,14 +125,14 @@ Mientras tanto que las siguientes gráficas fueron realizadas en \texttt{gnuplot
 	\centering
 	\subfigure[$n=60$.]{\includegraphics[width=0.70\textwidth]{imgen60}}
 	\subfigure[$n=90$.]{\includegraphics[width=0.70\textwidth]{imgen90}}
-	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 2:}
+	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 3:}
 \end{figure}
 \pagebreak
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\subfigure[$n=120$.]{\includegraphics[width=0.70\textwidth]{imgen}}
 	\subfigure[$n=150$.]{\includegraphics[width=0.70\textwidth]{imagen150}}
-	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 3:}
+	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 4:}
 \end{figure}\pagebreak
 \\En conclusión se puede asegurar que con forme la cantidad probabilidad de conexiones aumenta, es decir, hay más aristas en el grafo respecto a la distancia promedio generada por todos los pares de distancias toma valores cada vez más pequeños ya que la distancia decrece a grandes rasgos ya que hay más diferentes tipos de aristas por considerar, para la creación de distancias entre pares de nodos, lo cual las acerca más unos entre otros.\\En lo cual el caso de la densidad de cluster o agrupación es un caso contrario, ya que entre más conexiones haya por nodo, habrá más posibilidad de que los vecinos del mismo tengan aristas entre ellos o la diferencia entre la cantidad de aristas que deba haber entre ellas a las que en realidad exista sea cada vez más pequeña.
 \bibliographystyle{unsrt}
