@@ -53,9 +53,18 @@ G.conectaaleatorio(prob)
 			self.vecinos[w].add(m)
 \end{lstlisting}
 Así pues esto definiría lo mas básico por elaborar par aun grafo base circular, tratando en las siguientes secciones otros aspectos que se pueden agregar al grafo.
-\section{Promedios de densidad}
-Como se ha tratado en practicas anteriores, el algoritmo de Floyd-Warshall crea un vector con todos los pares de distancias entre un par de puntos dados $u$ y $v$.\\
-Por lo cual se puede 
+\section{Promedios de distancias}
+Como se ha tratado en practicas anteriores, el algoritmo de Floyd-Warshall[2] crea un vector con todos los pares de distancias entre un par de puntos dados $u$ y $v$.\\
+Por lo cual se puede considerar como característica en el grafo lo que seria el promedio de distancias entre nodos, tomando la suma de distancias de todos los pares de nodos dados obteniendo así este parámetro que varia dependiendo de la cantidad de nodos, esto es, $D= \frac{\sum_{i=1}^n d[i]}{n}$, donde \texttt{d[i]} es el vector de las distancias tomado del algoritmo de Floyd-Warshall.\\ Donde todo lo ya dicho se desglosa en las siguiente lineas de código:
+\begin{lstlisting}[style=tt]
+G.promediodistancias():
+	self.suma = 0
+	for key, value in self.d.items():
+		self.suma= self.suma+value
+	return self.suma/n
+\end{lstlisting}
 \section{Densidad de cluster}
+Como otro rasgo a denotar para un grafo se puede considerar la densidad de cada uno de sus cluster o grupo su equivalente en español, el cual indica el numero de conexiones que debería existir por grupo que forma cada uno de los nodos individualmente, es decir, quienes de sus vecinos esta conectado entre ellos mismos.\\
+Formulando esto matemáticamente se obtendría un coeficiente de densidad de grupo en un rango de $(0,1)$ con la siguiente formula: $C=\frac{2m}{n(n-1)!}$
 \section{Resultados}
 \end{document}
