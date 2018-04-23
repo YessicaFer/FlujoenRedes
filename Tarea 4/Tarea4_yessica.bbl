@@ -11,4 +11,14 @@ Yessica~Reyna Fern\'andez.
 \newblock {\em Introduction to Algorithms}, capitulo~25.
 \newblock 2009.
 
+\bibitem{R}
+\newblock The R Project for Statistical Computing.
+\newblock \url{https://www.r-project.org/}
+
+\bibitem{grafica}
+Yessica~Reyna Fern\'andez.
+\newblock Tarea 4.
+\newblock 2018.
+\newblock \url{https://github.com/YessicaFer/FlujoenRedes/blob/Tarea-1/Tarea%204/grafica.py}
+
 \end{thebibliography}

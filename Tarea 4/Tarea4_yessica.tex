@@ -99,7 +99,23 @@ Entre las siguientes figuras se mostrara la relación de los tiempos tomados par
 	\includegraphics[width=0.6\textwidth]{TiempovsN}
 	\caption{Tiempo versus Cantidad de nodos\label{Figura 1:}}
 \end{figure}\pagebreak
-\begin{figure}[h]
+\\Para la gráfica anterior se hace uso del lenguaje de programación \texttt{R}\cite{R} con apoyo de los archivos tipo \texttt{csv} con los datos de los tiempos para cada cantidad diferente de nodos, verificando la normalidad de los datos y ajustando la curva de esfuerzo computacional del algoritmo a los datos analizados en un diagrama de cajas, todo esto se resume con las siguientes líneas de código:
+\begin{lstlisting}[style=rm]
+Tiempos <- as.data.frame(t(read.csv("Tiempo60.csv", header=FALSE)))
+T90<-as.data.frame(t(read.csv("Tiempo90.csv", header=FALSE)))
+T120<-as.data.frame(t(read.csv("Tiempo1.csv", header=FALSE)))
+T150<-as.data.frame(t(read.csv("Tiempo150.csv", header=FALSE)))
+TTotales<-t(smartbind(Tiempos, T90, T120, T150,fill=0))
+shapiro.test(TTotales)#no normales
+pdf("TiempovsN.pdf")
+boxplot(TTotales, main="Tiempo versus Cantidad de nodos", xlab=c("Número de nodos"), ylab=c("Tiempo (segundos)"), varwidht=TRUE, notch=FALSE, plot=TRUE)
+par(new=TRUE, pty="m", xaxt="n", yaxt="n")
+plot(seq(1:4)^3, type="l" , xlab="", ylab="", col="blue", lwd=2)
+legend("topleft",col=c("Blue"), legend =c("Función Cúbica"), lwd=3, bty = "n")
+graphics.off()
+\end{lstlisting}\pagebreak
+Mientras tanto que las siguientes gráficas fueron realizadas en \texttt{gnuplot} apartir del archivo dentro del repositorio llamado \texttt{grafica.py}\cite{grafica}
+\begin{figure}[h!]
 	\centering
 	\subfigure[$n=60$.]{\includegraphics[width=0.70\textwidth]{imgen60}}
 	\subfigure[$n=90$.]{\includegraphics[width=0.70\textwidth]{imgen90}}
@@ -112,7 +128,7 @@ Entre las siguientes figuras se mostrara la relación de los tiempos tomados par
 	\subfigure[$n=150$.]{\includegraphics[width=0.70\textwidth]{imagen150}}
 	\caption{Distancia promedio/cota y densidad de cluster.}\label{Figura 3:}
 \end{figure}\pagebreak
-\\En conclusión se puede asegurar que con forme la cantidad probabilidad de conexiones aumenta, es decir, hay más aristas en el grafo respecto a la distancia promedio generada por todos los pares de distancias toma valores cada vez más pequeños ya que la distancia decrece a grandes rasgos ya que hay más diferentes tipos de aristas por considerar, para la creación de distancias entre pares de nodos, lo cual las acerca más unos entre otros.\\En lo cual el caso de la densidad de cluster o agrupación es un caso contrario, ya que entre más conexiones haya por nodo, habrá más posibilidad de que los vecinos del mismo tengan aristas entre ellos o la diferencia entre la cantidad de aristas que deba haber entre ellas a las que en realidad exista sea cada vez más pequeña.\pagebreak
+\\En conclusión se puede asegurar que con forme la cantidad probabilidad de conexiones aumenta, es decir, hay más aristas en el grafo respecto a la distancia promedio generada por todos los pares de distancias toma valores cada vez más pequeños ya que la distancia decrece a grandes rasgos ya que hay más diferentes tipos de aristas por considerar, para la creación de distancias entre pares de nodos, lo cual las acerca más unos entre otros.\\En lo cual el caso de la densidad de cluster o agrupación es un caso contrario, ya que entre más conexiones haya por nodo, habrá más posibilidad de que los vecinos del mismo tengan aristas entre ellos o la diferencia entre la cantidad de aristas que deba haber entre ellas a las que en realidad exista sea cada vez más pequeña.
 \bibliographystyle{unsrt}
 \bibliography{mibliblio}
 \end{document}
