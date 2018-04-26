@@ -1,4 +1,4 @@
-from random import random, randint, uniform
+from random import random, randint, normalvariate, expovariate
 
 class GrafoYessica:
     def __init__(self):
@@ -40,7 +40,7 @@ class GrafoYessica:
                     y1=self.V[i][1]
                     x2=self.V[j][0]
                     y2=self.V[j][1]
-                    self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=uniform(1,10)
+                    self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=normalvariate(1, 0.5)
                     self.E[(i,j)]=self.E[(i,j)]=0
                     self.vecinos[i].add(j)
                     self.vecinos[j].add(i)
@@ -50,7 +50,12 @@ class GrafoYessica:
             for w in range(len(self.V)):
                 if m is not w and (m,w) not in self.E:
                     if random()< prob:
-                        self.E[(m,w)]=self.E[(w,m)]=self.euclidiana(m,w)
+                        x1=self.V[i][0]
+                        y1=self.V[i][1]
+                        x2=self.V[j][0]
+                        y2=self.V[j][1]
+                        self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=expovariate(0.1)
+                        self.E[(m,w)]=self.E[(w,m)]=0
                         self.vecinos[m].add(w)
                         self.vecinos[w].add(m)
 
@@ -120,9 +125,11 @@ class GrafoYessica:
             print("quit()", file=archivo)
 
 k=10
-l=2
+l=1
+prob=2^(-3)
 G=GrafoYessica()
 G.nodoscrear()
 G.conecta(l)
+G.conectaaleatorio(prob)
 print(G.ford_fulkerson())
 G.archivo()
