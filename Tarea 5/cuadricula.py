@@ -1,4 +1,4 @@
-from random import random, randint, normalvariate, expovariate
+from random import random, randint, normalvariate, expovariate, uniform
 
 class GrafoYessica:
     def __init__(self):
@@ -46,18 +46,66 @@ class GrafoYessica:
                     self.vecinos[j].add(i)
 
     def conectaaleatorio(self, prob):
-        for m in range(len(self.V)):
-            for w in range(len(self.V)):
+        for m in range(1, len(self.V)+1):
+            for w in range(1, len(self.V)+1):
                 if m is not w and (m,w) not in self.E:
                     if random()< prob:
-                        x1=self.V[i][0]
-                        y1=self.V[i][1]
-                        x2=self.V[j][0]
-                        y2=self.V[j][1]
+                        x1=self.V[m][0]
+                        y1=self.V[m][1]
+                        x2=self.V[w][0]
+                        y2=self.V[w][1]
                         self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=expovariate(0.1)
                         self.E[(m,w)]=self.E[(w,m)]=0
                         self.vecinos[m].add(w)
                         self.vecinos[w].add(m)
+
+    def percolacion(self,nodo,arista,l):
+        if arista is True:
+            if nodo is True:
+                m=randint(1,k**2)
+                if m in self.vecinos:
+                    del self.vecinos[m]
+                    for i in range(len(self.E)):
+                        if (m,i+1) in self.E:
+                            del self.E[(m,i+1)]
+                            del self.E[(i+1,m)]
+                            x1=self.V[m][0]
+                            y1=self.V[m][1]
+                            x2=self.V[i+1][0]
+                            y2=self.V[i+1][1]
+                            del self.pesos[(x1,y1),(x2,y2)]
+                            del self.pesos[(x2,y2),(x1,y1)]
+            else:
+                m=randint(1,k**2)
+                g=randint(m,m+l)
+                if m in self.vecinos:
+                    del self.vecinos[m]
+                    if (m,g) in self.E:
+                        print("hola")
+                        del self.E[(m,g)]
+                        del self.E[(g,m)]
+                        x1=self.V[m][0]
+                        y1=self.V[m][1]
+                        x2=self.V[g][0]
+                        y2=self.V[g][1]
+                        del self.pesos[(x1,y1),(x2,y2)]
+                        del self.pesos[(x2,y2),(x1,y1)]
+        else:
+            if nodo is True:
+                m=randint(1,k**2)
+                if m in self.vecinos:
+                    del self.vecinos[m]
+                    for i in range(len(self.E)):
+                        if (m,i+1) in self.E:
+                            del self.E[(m,i+1)]
+                            del self.E[(i+1,m)]
+                            x1=self.V[m][0]
+                            y1=self.V[m][1]
+                            x2=self.V[i+1][0]
+                            y2=self.V[i+1][1]
+                            del self.pesos[(x1,y1),(x2,y2)]
+                            del self.pesos[(x2,y2),(x1,y1)]
+        
 
     def camino(self): # construcción de un camino aumentante
         cola = [self.s]
@@ -124,12 +172,18 @@ class GrafoYessica:
             print("plot 'cuadricula1.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
+arista=True
+nodo=True
 k=10
 l=1
-prob=2^(-3)
+prob=2^(-2)
+r=10
 G=GrafoYessica()
 G.nodoscrear()
 G.conecta(l)
 G.conectaaleatorio(prob)
+print(G.ford_fulkerson())
+for q in range(r):
+    G.percolacion(nodo,arista,l)
 print(G.ford_fulkerson())
 G.archivo()
