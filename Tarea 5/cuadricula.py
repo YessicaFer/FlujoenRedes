@@ -1,4 +1,6 @@
-from random import random, randint, normalvariate, expovariate, uniform
+from random import random, randint, normalvariate, expovariate, uniform, choice
+from math import floor, ceil
+import time
 
 class GrafoYessica:
     def __init__(self):
@@ -9,7 +11,7 @@ class GrafoYessica:
         self.pesos=dict()
         self.vecinos=dict()
         self.pos=dict()
-        with open ("cuadricula1.dat", "w") as f:
+        with open ("percolara2.dat", "w") as f:
             print("", end="",file=f)
 
     def manhattan(self,n1,n2):
@@ -21,13 +23,13 @@ class GrafoYessica:
         
     def nodoscrear(self):
         v=0
-        for i in range (0,k):
-            for j in range (0,k):
+        for i in range (0,n):
+            for j in range (0,n):
                 v +=1
                 x=i+1
                 y=j+1
                 self.V[v]=(x,y)
-                with open ("cuadricula1.dat", "a") as salida:
+                with open ("percolara2.dat", "a") as salida:
                     print(x, y, file=salida)
                 if not v in self.vecinos:
                     self.vecinos[v]=set()
@@ -40,73 +42,76 @@ class GrafoYessica:
                     y1=self.V[i][1]
                     x2=self.V[j][0]
                     y2=self.V[j][1]
-                    self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=normalvariate(1, 0.5)
-                    self.E[(i,j)]=self.E[(i,j)]=0
+                    self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=floor(normalvariate(5, 5**(1/2)))
+                    self.E[(i,j)]=self.E[(j,i)]=0
                     self.vecinos[i].add(j)
                     self.vecinos[j].add(i)
 
-    def conectaaleatorio(self, prob):
         for m in range(1, len(self.V)+1):
-            for w in range(1, len(self.V)+1):
-                if m is not w and (m,w) not in self.E:
-                    if random()< prob:
-                        x1=self.V[m][0]
-                        y1=self.V[m][1]
-                        x2=self.V[w][0]
-                        y2=self.V[w][1]
-                        self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=expovariate(0.1)
-                        self.E[(m,w)]=self.E[(w,m)]=0
-                        self.vecinos[m].add(w)
-                        self.vecinos[w].add(m)
+            w=randint(1,k)
+            if m is not w and (m,w) not in self.E:
+                if random()< prob:
+                    x1=self.V[m][0]
+                    y1=self.V[m][1]
+                    x2=self.V[w][0]
+                    y2=self.V[w][1]
+                    self.pesos[(x1,y1),(x2,y2)]=self.pesos[(x2,y2),(x1,y1)]=ceil(expovariate(0.1))
+                    self.E[(m,w)]=self.E[(w,m)]=0
+                    self.vecinos[m].add(w)
+                    self.vecinos[w].add(m)
 
     def percolacion(self,nodo,arista,l):
-        if arista is True:
-            if nodo is True:
-                m=randint(1,k**2)
-                if m in self.vecinos:
-                    del self.vecinos[m]
-                    for i in range(len(self.E)):
-                        if (m,i+1) in self.E:
-                            del self.E[(m,i+1)]
-                            del self.E[(i+1,m)]
+        a=0
+        if nodo is True:
+            m=randint(1,k)
+            if m in self.vecinos:
+                del self.vecinos[m]
+                for i in range(len(self.E)):
+                    b=i+1
+                    if b != m and (b,m) in self.E:
+                        if (m,b) in self.E and m in self.V and b in self.V:
                             x1=self.V[m][0]
                             y1=self.V[m][1]
-                            x2=self.V[i+1][0]
-                            y2=self.V[i+1][1]
-                            del self.pesos[(x1,y1),(x2,y2)]
-                            del self.pesos[(x2,y2),(x1,y1)]
-            else:
-                m=randint(1,k**2)
-                g=randint(m,m+l)
-                if m in self.vecinos:
-                    del self.vecinos[m]
-                    if (m,g) in self.E:
-                        print("hola")
-                        del self.E[(m,g)]
-                        del self.E[(g,m)]
-                        x1=self.V[m][0]
-                        y1=self.V[m][1]
-                        x2=self.V[g][0]
-                        y2=self.V[g][1]
-                        del self.pesos[(x1,y1),(x2,y2)]
-                        del self.pesos[(x2,y2),(x1,y1)]
+                            x2=self.V[b][0]
+                            y2=self.V[b][1]
+                            if ((x1,y1),(x2,y2)) in self.pesos:
+                                del self.E[(m,b)]
+                                del self.E[(b,m)]
+                                del self.pesos[(x1,y1),(x2,y2)]
+                                del self.pesos[(x2,y2),(x1,y1)]
         else:
-            if nodo is True:
-                m=randint(1,k**2)
-                if m in self.vecinos:
-                    del self.vecinos[m]
-                    for i in range(len(self.E)):
-                        if (m,i+1) in self.E:
-                            del self.E[(m,i+1)]
-                            del self.E[(i+1,m)]
+            if arista is True:
+                while a!=4:
+                    m=randint(1,k)
+                    g=choice([m+l,m+n,m-n,m-1,(m+n+1),(m+n-1),(m-n+1),(m-n-1)])
+                    if (g,m) in self.E:
+                        if (m,g) in self.E and m in self.V and g in self.V:
                             x1=self.V[m][0]
                             y1=self.V[m][1]
-                            x2=self.V[i+1][0]
-                            y2=self.V[i+1][1]
-                            del self.pesos[(x1,y1),(x2,y2)]
-                            del self.pesos[(x2,y2),(x1,y1)]
-        
-
+                            x2=self.V[g][0]
+                            y2=self.V[g][1]
+                            if ((x1,y1),(x2,y2)) in self.pesos:
+                                a+=1
+                                del self.E[(m,g)]
+                                del self.E[(g,m)]
+                                del self.pesos[(x1,y1),(x2,y2)]
+                                del self.pesos[(x2,y2),(x1,y1)]
+                    else:
+                        m=randint(1,k)
+                        g=choice([m+l,m+n,m-n,m-1,(m+n+1),(m+n-1),(m-n+1),(m-n-1)])
+                        if (g,m) in self.E:
+                            if (m,g) in self.E and m in self.V and g in self.V:
+                                x1=self.V[m][0]
+                                y1=self.V[m][1]
+                                x2=self.V[g][0]
+                                y2=self.V[g][1]
+                                if ((x1,y1),(x2,y2)) in self.pesos:
+                                    a+=1
+                                    del self.E[(m,g)]
+                                    del self.E[(g,m)]
+                                    del self.pesos[(x1,y1),(x2,y2)]
+                                    del self.pesos[(x2,y2),(x1,y1)]
+                        
     def camino(self): # construcción de un camino aumentante
         cola = [self.s]
         usados = set()
@@ -126,12 +131,12 @@ class GrafoYessica:
         else:
             return None
  
-    def ford_fulkerson(self): # algoritmo de Ford y Fulkerson
-        self.s=(self.V[91][0],self.V[91][1])
-        self.t=(self.V[10][0],self.V[10][1])
+    def ford_fulkerson(self, s, t): # algoritmo de Ford y Fulkerson
+        self.s=(self.V[s][0],self.V[s][1])
+        self.t=(self.V[t][0],self.V[t][1])
         if self.s == self.t:
             return 0
-        maximo = 0
+        self.maximo = 0
         self.flujo = dict()
         while True:
             aum = self.camino()
@@ -146,16 +151,24 @@ class GrafoYessica:
                 self.flujo[(v, u)] = actual + incr
                 self.flujo[(u, v)] = inverso - incr
                 u = v
-            maximo += incr
-        return maximo
+            self.maximo += incr
+        if percolar is True:
+            filename="Ford-Fulkersonpercolara2v"+str(m)+".csv"
+            with open(filename, "at") as archivo:
+                print(self.maximo, file=archivo)
+        else:
+            filename="Ford-Fulkerson2v"+str(m)+".csv"
+            with open(filename, "at") as archivo:
+                print(self.maximo, file=archivo)
+        return self.maximo
 
-    def archivo(self):
-        with open("cuadricula1.plot", "w") as archivo:
+    def archivo(self,k):
+        with open("percolara2.plot", "w") as archivo:
             print("set term eps", file=archivo)
-            print("set output 'cuadricula1.eps'", file=archivo)
+            print("set output 'percolara2.eps'", file=archivo)
             print("set pointsize 1", file=archivo)
-            print("set xrange[{:d}:{:d}]".format(0, k+1), file=archivo)
-            print("set yrange[{:d}:{:d}]".format(0, k+1), file=archivo)
+            print("set xrange[{:d}:{:d}]".format(0, n+1), file=archivo)
+            print("set yrange[{:d}:{:d}]".format(0, n+1), file=archivo)
             print("set size square", file=archivo)
             print("set key off", file=archivo)
             num=1
@@ -169,21 +182,42 @@ class GrafoYessica:
                 print("set arrow {:d} from {:f}, {:f} to {:f}, {:f} nohead".format(num, x1, y1, x2, y2), file=archivo)
                 num += 1
             print("show arrow", file=archivo)
-            print("plot 'cuadricula1.dat' using 1:2 with points pt 7", file=archivo)
+            print("plot 'percolara2.dat' using 1:2 with points pt 7", file=archivo)
             print("quit()", file=archivo)
 
 arista=True
-nodo=True
-k=10
-l=1
-prob=2^(-2)
-r=10
-G=GrafoYessica()
-G.nodoscrear()
-G.conecta(l)
-G.conectaaleatorio(prob)
-print(G.ford_fulkerson())
-for q in range(r):
-    G.percolacion(nodo,arista,l)
-print(G.ford_fulkerson())
-G.archivo()
+nodo=False
+percolar=True
+for m in range(4):
+    filename="tiempopercolaciona2v"+str(m)+".csv"
+    for i in range(5, 20):
+        n=i
+        if percolar is True:
+            with open(filename,"at") as hile:
+                k=n*n
+                l=2
+                prob=0.0003
+                G=GrafoYessica()
+                G.nodoscrear()
+                G.conecta(l)
+                start_time = time.clock()
+                pasta=G.ford_fulkerson((i*i)-(i-1),i)
+                print (time.clock() - start_time, file=hile)
+                while pasta>0:
+                    G.percolacion(nodo,arista,l)
+                    start_time = time.clock()
+                    pasta=G.ford_fulkerson((i*i)-(i-1),i)
+                    print (time.clock() - start_time, file=hile)
+                G.archivo(k)
+        else:
+            with open(filename,"at") as hile:
+                k=n*n
+                l=2
+                prob=0.0003
+                G=GrafoYessica()
+                G.nodoscrear()
+                G.conecta(l)
+                start_time = time.clock()
+                G.ford_fulkerson((i*i)-(i-1),i)
+                print (time.clock() - start_time, file=hile)
+                G.archivo(k)
