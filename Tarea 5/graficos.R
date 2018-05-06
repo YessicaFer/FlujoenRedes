@@ -1,0 +1,42 @@
+FlujoP <- as.data.frame(t(read.csv("Ford-Fulkersonpercolar.csv", header=FALSE)))
+FlujoP1<- as.data.frame(t(read.csv("Ford-Fulkersonpercolarv0.csv", header=FALSE)))
+FlujoP2<- as.data.frame(t(read.csv("Ford-Fulkersonpercolarv1.csv", header=FALSE)))
+FlujoP3<- as.data.frame(t(read.csv("Ford-Fulkersonpercolarv2.csv", header=FALSE)))
+FlujoP4<- as.data.frame(t(read.csv("Ford-Fulkersonpercolarv3.csv", header=FALSE)))
+FlujoPT<-smartbind(FlujoP,FlujoP1,FlujoP2,FlujoP3,FlujoP4)
+colnames(FlujoPT) <- rep(1,length(FlujoPT))
+N5<-as.data.frame(FlujoPT[1,1:2])
+N10<-as.data.frame(FlujoPT[1,89:102])
+N19<-as.data.frame(FlujoPT[1,446:458])
+
+N52<-as.data.frame(FlujoPT[2,1:3])
+N102<-as.data.frame(FlujoPT[2,49:68])
+N192<-as.data.frame(FlujoPT[2,462:611])
+
+N53<-as.data.frame(FlujoPT[3,1:9])
+N103<-as.data.frame(FlujoPT[3,75:115])
+N193<-as.data.frame(FlujoPT[3,470:591])
+
+N54<-as.data.frame(FlujoPT[4,1:12])
+N104<-as.data.frame(FlujoPT[4,56:74])
+N194<-as.data.frame(FlujoPT[4,484:575])
+
+N55<-as.data.frame(FlujoPT[5,1:5])
+N105<-as.data.frame(FlujoPT[5,54:63])
+N195<-as.data.frame(FlujoPT[5,455:475])
+FFT<-smartbind(N5, N52, N53, N54, N55)
+FFT1<-smartbind(N10, N102, N103, N104,N105)
+FFT2<-smartbind(N19, N192, N193, N194,N195)
+colnames(FFT) <- c(1:12)
+colnames(FFT1) <- c(1:length(FFT1))
+colnames(FFT2) <- c(1:length(FFT2))
+
+pdf(paste("FordFulkerson5N.pdf"))
+boxplot(FFT, xlab=c("Quitando nodos"), ylab=c("Flujo máximo"), range = TRUE, plot=TRUE)
+
+pdf(paste("FordFulkerson10N.pdf"))
+boxplot(FFT1, xlab=c("Quitando nodos"), ylab=c("Flujo máximo"), range = TRUE, plot=TRUE)
+
+pdf(paste("FordFulkerson19N.pdf"))
+boxplot(FFT2, xlab=c("Quitando nodos"), ylab=c("Flujo máximo"), staplewex=0.5, varwidth=TRUE, range = TRUE, plot=TRUE)
+graphics.off()
