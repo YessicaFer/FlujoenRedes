@@ -1,6 +1,6 @@
 set term eps
 set output 'nopercolar.eps'
-set pointsize 1
+set pointsize 0.5
 set xrange[0:20]
 set yrange[0:20]
 set size square

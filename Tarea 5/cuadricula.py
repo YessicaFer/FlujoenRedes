@@ -153,11 +153,11 @@ class GrafoYessica:
                 u = v
             self.maximo += incr
         if percolar is True:
-            filename="Ford-Fulkersonpercolara2v"+str(m)+".csv"
+            filename="Ford-Fulkersonpercolara2v.csv"
             with open(filename, "at") as archivo:
                 print(self.maximo, file=archivo)
         else:
-            filename="Ford-Fulkerson2v"+str(m)+".csv"
+            filename="Ford-Fulkerson2v.csv"
             with open(filename, "at") as archivo:
                 print(self.maximo, file=archivo)
         return self.maximo
@@ -166,7 +166,7 @@ class GrafoYessica:
         with open("percolara2.plot", "w") as archivo:
             print("set term eps", file=archivo)
             print("set output 'percolara2.eps'", file=archivo)
-            print("set pointsize 1", file=archivo)
+            print("set pointsize 0.8", file=archivo)
             print("set xrange[{:d}:{:d}]".format(0, n+1), file=archivo)
             print("set yrange[{:d}:{:d}]".format(0, n+1), file=archivo)
             print("set size square", file=archivo)
@@ -188,36 +188,34 @@ class GrafoYessica:
 arista=True
 nodo=False
 percolar=True
-for m in range(4):
-    filename="tiempopercolaciona2v"+str(m)+".csv"
-    for i in range(5, 20):
-        n=i
-        if percolar is True:
-            with open(filename,"at") as hile:
-                k=n*n
-                l=2
-                prob=0.0003
-                G=GrafoYessica()
-                G.nodoscrear()
-                G.conecta(l)
-                start_time = time.clock()
-                pasta=G.ford_fulkerson((i*i)-(i-1),i)
-                print (time.clock() - start_time, file=hile)
-                while pasta>0:
-                    G.percolacion(nodo,arista,l)
-                    start_time = time.clock()
-                    pasta=G.ford_fulkerson((i*i)-(i-1),i)
-                    print (time.clock() - start_time, file=hile)
-                G.archivo(k)
-        else:
-            with open(filename,"at") as hile:
-                k=n*n
-                l=2
-                prob=0.0003
-                G=GrafoYessica()
-                G.nodoscrear()
-                G.conecta(l)
-                start_time = time.clock()
-                G.ford_fulkerson((i*i)-(i-1),i)
-                print (time.clock() - start_time, file=hile)
-                G.archivo(k)
+filename="tiempopercolaciona2v.csv"
+n=10
+if percolar is True:
+    with open(filename,"at") as hile:
+        k=n*n
+        l=2
+        prob=0.003
+        G=GrafoYessica()
+        G.nodoscrear()
+        G.conecta(l)
+        start_time = time.clock()
+        pasta=G.ford_fulkerson((10*10)-(10-1),10)
+        print (time.clock() - start_time, file=hile)
+        while pasta>0:
+            G.percolacion(nodo,arista,l)
+            start_time = time.clock()
+            pasta=G.ford_fulkerson((10*10)-(10-1),10)
+            print (time.clock() - start_time, file=hile)
+        G.archivo(k)
+else:
+    with open(filename,"at") as hile:
+        k=n*n
+        l=2
+        prob=0.03
+        G=GrafoYessica()
+        G.nodoscrear()
+        G.conecta(l)
+        start_time = time.clock()
+        G.ford_fulkerson((19*19)-(19-1),19)
+        print (time.clock() - start_time, file=hile)
+        G.archivo(k)
