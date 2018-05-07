@@ -170,6 +170,8 @@ class GrafoYessica:
             print("set xrange[{:d}:{:d}]".format(0, n+1), file=archivo)
             print("set yrange[{:d}:{:d}]".format(0, n+1), file=archivo)
             print("set size square", file=archivo)
+            print("unset xtics", file=archivo)
+            print("unset ytics", file=archivo)
             print("set key off", file=archivo)
             num=1
             for a in self.E:
@@ -186,7 +188,7 @@ class GrafoYessica:
             print("quit()", file=archivo)
 
 arista=True
-nodo=False
+nodo=True
 percolar=True
 filename="tiempopercolaciona2v.csv"
 n=10
@@ -216,6 +218,6 @@ else:
         G.nodoscrear()
         G.conecta(l)
         start_time = time.clock()
-        G.ford_fulkerson((19*19)-(19-1),19)
+        G.ford_fulkerson((5*5)-(5-1),5)
         print (time.clock() - start_time, file=hile)
         G.archivo(k)

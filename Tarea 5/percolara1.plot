@@ -4,6 +4,8 @@ set pointsize 0.5
 set xrange[0:20]
 set yrange[0:20]
 set size square
+unset xtics
+unset ytics
 set key off
 set arrow 1 from 1.000000, 1.000000 to 1.000000, 2.000000 nohead
 set arrow 2 from 1.000000, 2.000000 to 1.000000, 1.000000 nohead
